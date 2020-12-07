@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
-// import CinemaListItem from '../cinemaDetailsListItem';
+import CinemaListItem from '../cinemaDetailsListItem';
 
 class cinemaList extends React.Component {
   constructor(props) {
