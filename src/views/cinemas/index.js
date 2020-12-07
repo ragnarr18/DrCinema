@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import CinemaList from '../../components/CinemaList';
+import CinemaList from '../../components/cinemaList';
 import reducers from '../../reducers';
 import { connect } from 'react-redux';
 import { changePage } from '../../actions/changePage';
