@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import { createStore } from 'redux';
 import CinemaList from '../../components/cinemaList';
 import reducers from '../../reducers';
-import { connect } from 'react-redux';
+
 import { changePage } from '../../actions/changePage';
 
 class Cinemas extends React.Component {
@@ -14,17 +14,22 @@ class Cinemas extends React.Component {
   }
 
   selectPage(number) {
-    console.log(number)
+    console.log(number);
     const { changePage } = this.props;
     changePage(number);
   }
 
   render() {
+    const { navigation } = this.props;
+    const { navigate } = navigation;
+
     return (
       <Provider store={createStore(reducers)}>
         <View>
           <Text>HELLO</Text>
-          <CinemaList />
+          <CinemaList
+            navigation={navigation}
+          />
           <Button
             title="One"
             onPress={() => this.selectPage(1)}

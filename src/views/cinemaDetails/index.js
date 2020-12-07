@@ -10,8 +10,6 @@ class CinemaDetails extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props;
-
     return (
       <View>
         <Text>Cinema Name: [TBD]</Text>

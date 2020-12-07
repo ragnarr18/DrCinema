@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import CinemaListItem from '../CinemaListItem';
 
 class CinemaList extends React.Component {
   constructor(props) {
@@ -8,11 +9,16 @@ class CinemaList extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props
+
     return (
       <View>
         <Text>
-          Cinema List
+          Cinema List start
         </Text>
+        <CinemaListItem
+          navigate={navigation.navigate}
+        />
       </View>
     )
   }
