@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View, FlatList, Text,
 } from 'react-native';
+import CinemaDetailsListItem from '../cinemaDetailsListItem';
 import styles from './styles';
 
 class CinemaDetailsList extends React.Component {
@@ -11,24 +12,12 @@ class CinemaDetailsList extends React.Component {
   }
 
   render() {
-    const { movies, navigation, setSelected } = this.props;
+    const { movies, navigation } = this.props;
     const { navigate } = navigation;
     return (
       <View>
-        {/* <FlatList
-          numColumns={1}
-          data={movies}
-          renderItem={({ item: { id, name, color } }) => (
-            <CinemaDetailsItem
-              id={id}
-              name={name}
-              color={color}
-              navigate={navigate}
-            />
-          )}
-          keyExtractor={(listItem) => listItem.id}
-        /> */}
-        <Text>I want a list to appear here</Text>
+        <Text>Hello there. This is where a list begins.</Text>
+        <CinemaDetailsListItem />
       </View>
     );
   }
