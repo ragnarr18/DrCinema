@@ -1,0 +1,101 @@
+{
+    "_id": "572a440e8d67709c36abc6d1",
+    "id": 9617,
+    "ids": {
+      "imdb": "3065204",
+      "rotten": null,
+      "tmdb": null
+    },
+    "title": "The Conjuring 2",
+    "alternativeTitles": "",
+    "year": "2015",
+    "release-dateIS": "2016-06-08",
+    "genres": [
+      {
+        "ID": 5,
+        "Name": "Hrollvekja",
+        "NameEN\t": "Horror"
+      }
+    ],
+    "actors_abridged": [
+      {
+        "name": "Vera Farmiga"
+      },
+      {
+        "name": "Patrick Wilson"
+      }
+    ],
+    "directors_abridged": [
+      {
+        "name": "James Wan"
+      }
+    ],
+    "trailers": [
+      {
+        "id": 259693,
+        "results": [
+          {
+            "id": "571b6f2c92514135ff0010ea",
+            "iso_639_1": "en",
+            "iso_3166_1": "US",
+            "key": "KyA9AtUOqRM",
+            "name": "Official Teaser Trailer",
+            "site": "YouTube",
+            "size": 1080,
+            "type": "Trailer"
+          },
+          {
+            "id": "571b6f579251414e970048d8",
+            "iso_639_1": "en",
+            "iso_3166_1": "US",
+            "key": "VFsmuRPClr4",
+            "name": "Main Trailer",
+            "site": "YouTube",
+            "size": 1080,
+            "type": "Trailer"
+          }
+        ]
+      }
+    ],
+    "omdb": [
+      {
+        "Title": "The Conjuring 2",
+        "Year": "2016",
+        "Rated": "N/A",
+        "Released": "10 Jun 2016",
+        "Runtime": "N/A",
+        "Genre": "Horror",
+        "Director": "James Wan",
+        "Writer": "Carey Hayes (screenplay), Chad Hayes (screenplay), James Wan (screenplay), David Leslie Johnson (screenplay), Carey Hayes (story), Chad Hayes (story), James Wan (story)",
+        "Actors": "Vera Farmiga, Patrick Wilson, David Thewlis, Franka Potente",
+        "Plot": "Lorraine and Ed Warren travel to north London to help a single mother raising four children alone in a house plagued by malicious spirits.",
+        "Language": "English",
+        "Country": "USA",
+        "Awards": "N/A",
+        "Poster": "http://ia.media-imdb.com/images/M/MV5BYmY1OWFjNWUtMTc3YS00ZTM3LTk0MDYtNzBhOTEwYzBmMTlmXkEyXkFqcGdeQXVyNjQ4NTMyMTg@._V1_SX300.jpg",
+        "Metascore": "N/A",
+        "imdbRating": "N/A",
+        "imdbVotes": "N/A",
+        "imdbID": "tt3065204",
+        "Type": "movie",
+        "tomatoMeter": "N/A",
+        "tomatoImage": "N/A",
+        "tomatoRating": "N/A",
+        "tomatoReviews": "N/A",
+        "tomatoFresh": "N/A",
+        "tomatoRotten": "N/A",
+        "tomatoConsensus": "N/A",
+        "tomatoUserMeter": "N/A",
+        "tomatoUserRating": "N/A",
+        "tomatoUserReviews": "22742",
+        "tomatoURL": "http://www.rottentomatoes.com/m/the_conjuring_2_the_enfield_poltergeist/",
+        "DVD": "N/A",
+        "BoxOffice": "N/A",
+        "Production": "Warner Bros. Pictures",
+        "Website": "N/A",
+        "Response": "True"
+      }
+    ],
+    "plot": "The Conjuring 2 er byggð á einu þekktasta máli Ed Warren, sem Patrick Wilson leikur, og Lorraine Warren, sem Vera Farmiga leikur, en það er draugagangur sem einstæða móðirin Peggy Hodgson, sem Frances O´Connor leikur, upplifði árið 1977, ásamt fjórum börnum sínum.\n\nHinir yfirskilvitlegu atburðir áttu sér stað á tveggja ára tímabili í Hodgon húsinu í Brimsdown í Enfield á Englandi.",
+    "poster": "https://kvikmyndir.is/images/poster/9617_500.jpg"
+  }
