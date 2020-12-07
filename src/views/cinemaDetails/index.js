@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './styles';
+import CinemaDetailsList from '../../components/cinemaDetailsList';
 
 class cinemaDetails extends React.Component {
   constructor(props) {
@@ -20,6 +21,8 @@ class cinemaDetails extends React.Component {
         <Text>Cinema Website: [TBD]</Text>
 
         <Text>This is where I want a list to appear:</Text>
+
+        <CinemaDetailsList />
       </View>
     );
   }
