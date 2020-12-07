@@ -15,7 +15,8 @@ class Cinemas extends React.Component {
 
   selectPage(number) {
     console.log(number)
-    this.props.changePage(number);
+    const { changePage } = this.props;
+    changePage(number);
   }
 
   render() {
