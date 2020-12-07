@@ -7,11 +7,17 @@ import reducers from '../../reducers';
 
 import { changePage } from '../../actions/changePage';
 
-class Cinemas extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const Cinemas = (props) => (
+  <View>
+    <Text>
+      Page
+    </Text>
+    <cinemaList />
+    <Button
+      title="One"
+      onPress={() => console.log(1)}
+    />
+    <View style={{ height: 5 }} />
 
   selectPage(number) {
     console.log(number);

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import CinemaListItem from '../CinemaListItem';
 
-class CinemaList extends React.Component {
+class cinemaList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -20,8 +20,9 @@ class CinemaList extends React.Component {
           navigate={navigation.navigate}
         />
       </View>
-    )
+    );
   }
 }
 
-export default CinemaList;
+export default cinemaList;
+// export default connect(null, { changePage })(CinemaList);
