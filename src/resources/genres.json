@@ -1,0 +1,27 @@
+[
+    {
+        "ID": 1,
+        "Name": "Spennumynd",
+        "NameEN\t": "Action"
+    },
+    {
+        "ID": 2,
+        "Name": "Gamanmynd",
+        "NameEN\t": "Comedy"
+    },
+    {
+        "ID": 3,
+        "Name": "Rómantísk",
+        "NameEN\t": "Romance"
+    },
+    {
+        "ID": 4,
+        "Name": "Drama",
+        "NameEN\t": "Drama"
+    },
+    {
+        "ID": 5,
+        "Name": "Hrollvekja",
+        "NameEN\t": "Horror"
+    }
+]
