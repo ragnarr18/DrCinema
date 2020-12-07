@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-  View, Text, Button
-} from 'react-native';
+import { Text, View, Button } from 'react-native';
 import styles from './styles';
 
-class CinemaDetailsListItem extends React.Component {
+class cinemaDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,12 +14,12 @@ class CinemaDetailsListItem extends React.Component {
     return (
       <View>
         <Button
-          title="Go to movieDetails"
-          onPress={() => navigate('MovieDetails')}
+          title="Go to CinemaDetails"
+          onPress={() => navigate('CinemaDetails')}
         />
       </View>
     );
   }
 }
 
-export default CinemaDetailsListItem;
+export default cinemaDetails;

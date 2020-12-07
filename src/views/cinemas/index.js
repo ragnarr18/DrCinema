@@ -14,9 +14,8 @@ class Cinemas extends React.Component {
     this.state = {};
   }
 
-  async componentDidMount() {
-     this.props.getCinemas();
-    // console.log(this.props);
+  componentDidMount() {
+    this.props.getCinemas();
   }
 
   selectPage(number) {

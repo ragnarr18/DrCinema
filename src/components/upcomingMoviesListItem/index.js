@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import styles from './styles';
 
-class cinemaDetails extends React.Component {
+class UpcomingMoviesListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,12 +11,10 @@ class cinemaDetails extends React.Component {
   render() {
     return (
       <View>
-        <Text>
-          Item
-        </Text>
+        <Text>General Kenobi.</Text>
       </View>
     );
   }
 }
 
-export default cinemaDetails;
+export default UpcomingMoviesListItem;

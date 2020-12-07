@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import UpcomingMoviesList from '../../components/upcomingMoviesList';
 
-class Cinemas extends React.Component {
+class UpcomingMovies extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,10 +11,11 @@ class Cinemas extends React.Component {
   render() {
     return (
       <View>
-        <Text>Upcoming movies</Text>
+        <Text>Upcoming movies, list starts here!</Text>
+        <UpcomingMoviesList />
       </View>
     );
   }
 }
 
-export default Cinemas;
+export default UpcomingMovies;

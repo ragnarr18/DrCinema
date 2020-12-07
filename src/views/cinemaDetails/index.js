@@ -22,7 +22,9 @@ class CinemaDetails extends React.Component {
 
         <Text>This is where I want a list to appear:</Text>
 
-        <CinemaDetailsList />
+        <CinemaDetailsList
+          navigation={navigation}
+        />
       </View>
     );
   }
