@@ -1,14 +1,14 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import cinemas from '../views/cinemas';
-import cinemaDetails from '../views/cinemaDetails';
-import movieDetails from '../views/movieDetails';
+import Cinemas from '../views/Cinemas';
+import CinemaDetails from '../views/CinemaDetails';
+import MovieDetails from '../views/MovieDetails';
 
 const StackNavigator = createStackNavigator({
-  cinemas,
-  cinemaDetails,
-  movieDetails,
+  Cinemas,
+  CinemaDetails,
+  MovieDetails,
 });
 
 export default createAppContainer(StackNavigator);

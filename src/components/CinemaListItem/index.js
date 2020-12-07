@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, View } from 'react-native';
+import styles from './styles';
 
-class CinemaList extends React.Component {
+class cinemaDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,11 +12,11 @@ class CinemaList extends React.Component {
     return (
       <View>
         <Text>
-          Cinema List
+          Item
         </Text>
       </View>
-    )
+    );
   }
 }
 
-export default CinemaList;
+export default cinemaDetails;

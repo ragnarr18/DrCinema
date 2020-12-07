@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import cinemaList from '../../components/cinemaList';
+import CinemaList from '../../components/CinemaList';
 
-class cinemas extends React.Component {
+class Cinemas extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -12,10 +12,10 @@ class cinemas extends React.Component {
     return (
       <View>
         <Text>Cinema Screen</Text>
-        <cinemaList />
+        <CinemaList />
       </View>
     )
   }
 }
 
-export default cinemas;
+export default Cinemas;

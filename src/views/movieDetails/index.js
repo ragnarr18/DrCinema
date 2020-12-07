@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-class movieDetails extends React.Component {
+class MovieDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -17,4 +17,4 @@ class movieDetails extends React.Component {
   }
 }
 
-export default movieDetails;
+export default MovieDetails;
