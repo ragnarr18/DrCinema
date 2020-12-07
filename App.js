@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Provider } from 'react-redux';
+import { Provider, applyMiddleware } from 'react-redux';
+import thunk from 'redux-thunk';
 import { createStore } from 'redux';
-import reducer from './src/reducers/test';
+import reducers from './src/reducers';
 import Navigator from './src/routes';
 
 export default function App() {
   return (
-    <Provider store={createStore(reducer)}>
+    <Provider store={createStore(reducers, applyMiddleware(thunk))}>
       <Navigator />
     </Provider>
   );
