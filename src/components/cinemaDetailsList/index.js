@@ -12,10 +12,14 @@ class CinemaDetailsList extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <View>
         <Text>Hello there. This is where a list begins.</Text>
-        <CinemaDetailsListItem />
+        <CinemaDetailsListItem
+          navigate={navigation.navigate}
+        />
       </View>
     );
   }

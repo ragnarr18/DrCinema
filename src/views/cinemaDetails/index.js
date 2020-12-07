@@ -10,6 +10,8 @@ class CinemaDetails extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <View>
         <Text>Cinema Name: [TBD]</Text>
@@ -20,7 +22,9 @@ class CinemaDetails extends React.Component {
 
         <Text>This is where I want a list to appear:</Text>
 
-        <CinemaDetailsList />
+        <CinemaDetailsList
+          navigation={navigation}
+        />
       </View>
     );
   }
