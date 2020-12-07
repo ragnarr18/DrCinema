@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import { createStore } from 'redux';
-import CinemaList from '../../components/CinemaList';
+import CinemaList from '../../components/cinemaList';
 import reducers from '../../reducers';
-import { connect } from 'react-redux';
+
 import { changePage } from '../../actions/changePage';
+import { getCinemas } from '../../actions/cinemasActions';
 
 class Cinemas extends React.Component {
   constructor(props) {
@@ -13,10 +14,14 @@ class Cinemas extends React.Component {
     this.state = {};
   }
 
+  async componentDidMount() {
+     this.props.getCinemas();
+    // console.log(this.props);
+  }
+
   selectPage(number) {
-    console.log(number)
-    const { changePage } = this.props;
-    changePage(number);
+    console.log(number);
+    this.props.changePage(number);
   }
 
   render() {
@@ -41,4 +46,4 @@ class Cinemas extends React.Component {
   }
 }
 
-export default connect(null, { changePage })(Cinemas);
+export default connect(null, { changePage, getCinemas })(Cinemas);
