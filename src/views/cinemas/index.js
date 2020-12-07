@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import cinemaList from '../../components/cinemaList';
 
 class cinemas extends React.Component {
   constructor(props) {
@@ -11,7 +12,10 @@ class cinemas extends React.Component {
     return (
       <View>
         <Text>Cinema Screen</Text>
+        <cinemaList />
       </View>
     )
   }
 }
+
+export default cinemas;
