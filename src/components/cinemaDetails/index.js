@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import styles from './styles';
 
 class cinemaDetails extends React.Component {
@@ -9,11 +9,14 @@ class cinemaDetails extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props;
+
     return (
       <View>
-        <Text>
-          Item
-        </Text>
+        <Button
+          title="Go to CinemaDetails"
+          onPress={() => navigate('CinemaDetails')}
+        />
       </View>
     );
   }

@@ -1,8 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
-// import { connect } from 'react-redux';
-// import { changePage } from '../../actions/changePage';
-import cinemaDetails from '../cinemaDetails';
+import { View, Text } from 'react-native';
+import CinemaListItem from '../CinemaListItem';
 
 class cinemaList extends React.Component {
   constructor(props) {
@@ -11,9 +9,16 @@ class cinemaList extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props
+
     return (
       <View>
-        <cinemaDetails />
+        <Text>
+          Cinema List start
+        </Text>
+        <CinemaListItem
+          navigate={navigation.navigate}
+        />
       </View>
     );
   }
