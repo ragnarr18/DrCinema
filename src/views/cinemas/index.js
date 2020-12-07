@@ -1,44 +1,27 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import CinemaList from '../../components/CinemaList';
-import reducers from '../../reducers';
-import { connect } from 'react-redux';
-import { changePage } from '../../actions/changePage';
+// import { Provider, connect } from 'react-redux';
+// import { createStore } from 'redux';
+import cinemaList from '../../components/cinemaList';
+// import reducers from '../../reducers';
 
-class Cinemas extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const Cinemas = (props) => (
+  <View>
+    <Text>
+      Page
+    </Text>
+    <cinemaList />
+    <Button
+      title="One"
+      onPress={() => console.log(1)}
+    />
+    <View style={{ height: 5 }} />
 
-  selectPage(number) {
-    console.log(number)
-    const { changePage } = this.props;
-    changePage(number);
-  }
+    <Button
+      title="Two"
+      onPress={() => console.log(2)}
+    />
+  </View>
+)
 
-  render() {
-    return (
-      <Provider store={createStore(reducers)}>
-        <View>
-          <Text>HELLO</Text>
-          <CinemaList />
-          <Button
-            title="One"
-            onPress={() => this.selectPage(1)}
-          />
-          <View style={{ height: 5 }} />
-
-          <Button
-            title="Two"
-            onPress={() => this.selectPage(2)}
-          />
-        </View>
-      </Provider>
-    );
-  }
-}
-
-export default connect(null, { changePage })(Cinemas);
+export default Cinemas;

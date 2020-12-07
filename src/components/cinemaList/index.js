@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+// import { connect } from 'react-redux';
+// import { changePage } from '../../actions/changePage';
+import cinemaDetails from '../cinemaDetails';
 
-class CinemaList extends React.Component {
+class cinemaList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,12 +13,11 @@ class CinemaList extends React.Component {
   render() {
     return (
       <View>
-        <Text>
-          Cinema List
-        </Text>
+        <cinemaDetails />
       </View>
-    )
+    );
   }
 }
 
-export default CinemaList;
+export default cinemaList;
+// export default connect(null, { changePage })(CinemaList);
