@@ -40,6 +40,10 @@ class Cinemas extends React.Component {
             title="Two"
             onPress={() => this.selectPage(2)}
           />
+          <Button
+            title="Visit upcomingMovies"
+            onPress={() => navigation.navigate('UpcomingMovies')}
+          />
         </View>
       </Provider>
     );
