@@ -32,6 +32,11 @@ class Cinemas extends React.Component {
     // <Provider store={createStore(reducers)}>
     // Provider á bara að vera í app.js
       <View>
+        <Button
+          color="#11ab11"
+          title="upcoming movies"
+          onPress={() => navigation.navigate('UpcomingMovies')}
+        />
         <Text>CINEMA LIST</Text>
         <Text>Click on a cinema to learn more about it.</Text>
         <CinemaList />
