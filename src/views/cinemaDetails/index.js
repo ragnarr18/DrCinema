@@ -23,8 +23,6 @@ class CinemaDetails extends React.Component {
         <Text>Cinema Address: {address}</Text>
         <Text>Cinema Phone: {phone}</Text>
         <Text>Cinema Website: {website}</Text>
-
-
       </View>
     );
   }

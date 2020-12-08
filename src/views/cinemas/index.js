@@ -33,6 +33,7 @@ class Cinemas extends React.Component {
     // Provider á bara að vera í app.js
       <View>
         <Text>CINEMA LIST</Text>
+        <Text>Click on a cinema to learn more about it.</Text>
         <CinemaList />
       </View>
     // </Provider>
