@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import CinemaListItem from '../cinemaListItem';
+import styles from './styles';
 
 class CinemaList extends React.Component {
   constructor(props) {
@@ -13,16 +14,18 @@ class CinemaList extends React.Component {
     // console.log('child: ', this.props);
     return (
       <View>
-        <Text>
+        <ScrollView
+          contentContainerStyle={{ paddingBottom: 60 }}
+        >
           {this.props.cinemas.map((cinema) => (
             <View>
               <CinemaListItem item={cinema} navigation={this.props.navigation}/>
             </View>
           ))}
-        </Text>
         {/* <CinemaListItem
           navigate={navigation.navigate}
         /> */}
+        </ScrollView>
       </View>
     );
   }
