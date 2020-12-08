@@ -19,6 +19,7 @@ class CinemaDetails extends React.Component {
       name,
       description,
       phone,
+      city,
       website,
     } = currentCinema;
     const address = currentCinema['address\t'];
@@ -35,6 +36,8 @@ class CinemaDetails extends React.Component {
             <Text>
               Address:
               {address}
+              ,
+              {city}
             </Text>
           </View>
           <View style={styles.textWrap}>
