@@ -15,7 +15,7 @@ class CinemaList extends React.Component {
     return (
       <View>
         <ScrollView
-          contentContainerStyle={{ paddingBottom: 180 }}
+          contentContainerStyle={{ paddingBottom: 230 }}
         >
           {this.props.cinemas.map((cinema) => (
             <View>

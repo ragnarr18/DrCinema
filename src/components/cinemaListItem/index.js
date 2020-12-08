@@ -13,7 +13,7 @@ class CinemaListItem extends React.Component {
   }
 
   inspectCinema(navigation, cinemaObject) {
-    const {currentCinema} = this.props;
+    const { currentCinema } = this.props;
     const { navigationRedux } = this.props;
     currentCinema(cinemaObject);
     navigationRedux.navigate('CinemaDetails');

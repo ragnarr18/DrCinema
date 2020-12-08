@@ -29,25 +29,25 @@ class CinemaDetails extends React.Component {
           <Text style={styles.title}>
             {name}
           </Text>
-          <HtmlText html={html} />
-          <View>
-            <Icon name="home" size={30} />
+          <HtmlText html={html} style={styles.description} />
+          <View style={styles.textWrap}>
+            <Icon name="home" size={30} style={styles.icon} />
             <Text>
-              Cinema Address:
+              Address:
               {address}
             </Text>
           </View>
-          <View>
-            <Icon name="phone" size={30} />
+          <View style={styles.textWrap}>
+            <Icon name="phone" size={30} style={styles.icon} />
             <Text>
-              Cinema Phone:
+              Phone:
               {phone}
             </Text>
           </View>
-          <View>
-            <Icon name="link" size={30} />
+          <View style={styles.textWrap}>
+            <Icon name="link" size={30} style={styles.icon} />
             <Text>
-              Cinema Website:
+              Website:
               {website}
             </Text>
           </View>
