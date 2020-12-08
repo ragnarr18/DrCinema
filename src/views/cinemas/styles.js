@@ -14,4 +14,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     padding: 5,
   },
+  header: {
+    borderBottomWidth: 1,
+  }
 });

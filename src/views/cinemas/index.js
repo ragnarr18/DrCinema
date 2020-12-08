@@ -38,8 +38,10 @@ class Cinemas extends React.Component {
           title="upcoming movies"
           onPress={() => navigation.navigate('UpcomingMovies')}
         />
-        <Text style={styles.title}>CINEMA LIST</Text>
-        <Text style={styles.description}>Click on a cinema to learn more about it.</Text>
+        <View>
+          <Text style={styles.title}>CINEMA LIST</Text>
+          <Text style={styles.description}>Click on a cinema to learn more about it.</Text>
+        </View>
         <CinemaList />
       </View>
     // </Provider>
