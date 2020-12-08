@@ -1,8 +1,8 @@
 import * as constants from '../constants';
 
 export default function(state= [], action) {
-    console.log("action.type: ", action.type);
-    console.log("state: ", state);
+    // console.log("action.type: ", action.type);
+    // console.log("state: ", state);
   switch (action.type) {
     case constants.GET_CINEMAS:
     // console.log("get cinemas", action.payload[0]);

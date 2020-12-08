@@ -1,8 +1,10 @@
 import React from 'react';
 import {
-  View, Text, Button
+  View, Text, Button,
 } from 'react-native';
+import { connect } from 'react-redux';
 import styles from './styles';
+import { currentCinema } from '../../actions/currentCinema';
 
 class CinemaListItem extends React.Component {
   constructor(props) {
@@ -10,9 +12,15 @@ class CinemaListItem extends React.Component {
     this.state = {};
   }
 
+  inspectCinema(navigation, cinemaObject) {
+    const {currentCinema} = this.props;
+    currentCinema(cinemaObject);
+    navigation.navigate('CinemaDetails');
+  }
+
   render() {
-    // const { navigate } = this.props;
-    const {item} = this.props;
+    const { navigation } = this.props;
+    const { item } = this.props;
     const addr = item['address\t'];
     return (
       <View>
@@ -22,12 +30,13 @@ class CinemaListItem extends React.Component {
         <Text>{item.website}</Text>
         <Button
           title="See Cinema"
-          // onPress={() => navigate('MovieDetails')}
-          onPress={() => console.log('boop')}
+          onPress={() => this.inspectCinema(navigation, item)}
         />
       </View>
     );
   }
 }
 
-export default CinemaListItem;
+// const mapStateToProps = ({ currentCinema }) => ({ currentCinema });
+
+export default connect(null, { currentCinema })(CinemaListItem);

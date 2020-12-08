@@ -14,31 +14,22 @@ class Cinemas extends React.Component {
 
   async componentDidMount() {
     await this.props.getCinemas();
-    console.log('parent; ', this.props.cinemas);
+    // console.log('parent; ', this.props.cinemas);
   }
 
   selectPage(number) {
-    console.log(number);
+    // console.log(number);
     this.props.changePage(number);
   }
 
   render() {
+    const { navigation } = this.props;
     return (
     // <Provider store={createStore(reducers)}>
     // Provider á bara að vera í app.js
       <View>
-        <Text>HELLO</Text>
-        <CinemaList />
-        <Button
-          title="One"
-          onPress={() => this.selectPage(1)}
-        />
-        <View style={{ height: 5 }} />
-
-        <Button
-          title="Two"
-          onPress={() => this.selectPage(2)}
-        />
+        <Text>CINEMA LIST</Text>
+        <CinemaList navigation={navigation} />
       </View>
     // </Provider>
     );

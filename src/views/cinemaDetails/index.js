@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
 import styles from './styles';
-// import CinemaDetailsList from '../../components/cinemaDetailsList';
 
 class CinemaDetails extends React.Component {
   constructor(props) {
@@ -10,15 +10,17 @@ class CinemaDetails extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props;
-
+    // const { navigation } = this.props;
+    const { currentCinema } = this.props;
+    const { name, description, phone, website } = currentCinema;
+    const address = currentCinema["address\t"];
     return (
       <View>
-        <Text>Cinema Name: [TBD]</Text>
-        <Text>Cinema Description: [TBD]</Text>
-        <Text>Cinema Address: [TBD]</Text>
-        <Text>Cinema Phone: [TBD]</Text>
-        <Text>Cinema Website: [TBD]</Text>
+        <Text>Cinema Name: {name}</Text>
+        <Text>Cinema Description: {description}</Text>
+        <Text>Cinema Address: {address}</Text>
+        <Text>Cinema Phone: {phone}</Text>
+        <Text>Cinema Website: {website}</Text>
 
         <Text>This is where I want a list to appear:</Text>
 
@@ -27,4 +29,6 @@ class CinemaDetails extends React.Component {
   }
 }
 
-export default CinemaDetails;
+const mapStateToProps = ({ currentCinema }) => ({ currentCinema });
+
+export default connect(mapStateToProps)(CinemaDetails);
