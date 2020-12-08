@@ -18,7 +18,6 @@ class UpcomingMovies extends React.Component {
   render() {
     return (
       <View>
-        <Text>Upcoming movies, list starts here!</Text>
         <UpcomingMoviesList />
       </View>
     );

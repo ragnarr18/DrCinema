@@ -10,6 +10,16 @@ export default StyleSheet.create({
     padding: 5,
     backgroundColor: '#bbbbbb',
   },
+  icon: {
+    height: 100,
+    width: 100,
+    paddingTop: 25,
+    paddingLeft: 25,
+  },
+  image: {
+    height: 100,
+    width: 100,
+  },
   textBox: {
     flex: 1,
     paddingLeft: 10,
