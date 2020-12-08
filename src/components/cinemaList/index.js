@@ -20,9 +20,11 @@ class CinemaList extends React.Component {
       <View>
         <Text>
           Cinema List
-          {this.props.cinemas.map((cinema)=>(
+          {this.props.cinemas.map((cinema) => (
             <View>
-              <Text>A cinema</Text>
+              <Text>
+                <CinemaListItem />
+              </Text>
             </View>
           ))}
         </Text>
@@ -34,6 +36,6 @@ class CinemaList extends React.Component {
   }
 }
 
-const mapStateToProps = ({ cinemas }) => ({ cinemas });
+const mapStateToProps = ({ cinemas }) => ({ cinemas }); // pulling cinems from store, same as (stateStore){return {cinemas: stateStore.cinemas}}
 export default connect(mapStateToProps)(CinemaList); // returns a connected component
 // export default connect(null)(cinemaList)
