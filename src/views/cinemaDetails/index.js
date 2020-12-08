@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import HtmlText from 'react-native-html-to-text';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import CinemaDetailsList from '../../components/cinemaDetailsList';
 import styles from './styles';
 import { getMoviesByCinemaId } from '../../actions/moviesActions';
@@ -27,29 +28,42 @@ class CinemaDetails extends React.Component {
       name,
       description,
       phone,
+      city,
       website,
     } = currentCinema;
     const address = currentCinema['address\t'];
     const html = `<p>${description}</p>`;
     return (
       <View>
-        <Text>
-          Cinema Name:
-          {name}
-        </Text>
-        <HtmlText html={html} />
-        <Text>
-          Cinema Address:
-          {address}
-        </Text>
-        <Text>
-          Cinema Phone:
-          {phone}
-        </Text>
-        <Text>
-          Cinema Website:
-          {website}
-        </Text>
+        <View style={styles.itemContainer}>
+          <Text style={styles.title}>
+            {name}
+          </Text>
+          <HtmlText html={html} style={styles.description} />
+          <View style={styles.textWrap}>
+            <Icon name="home" size={30} style={styles.icon} />
+            <Text>
+              Address:
+              {address}
+              ,
+              {city}
+            </Text>
+          </View>
+          <View style={styles.textWrap}>
+            <Icon name="phone" size={30} style={styles.icon} />
+            <Text>
+              Phone:
+              {phone}
+            </Text>
+          </View>
+          <View style={styles.textWrap}>
+            <Icon name="link" size={30} style={styles.icon} />
+            <Text>
+              Website:
+              {website}
+            </Text>
+          </View>
+        </View>
         <Text>Movies currently in this cinema:</Text>
         <CinemaDetailsList />
       </View>

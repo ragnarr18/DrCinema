@@ -4,5 +4,5 @@ const { width: winWidth } = Dimensions.get('window');
 const { height: winHeight } = Dimensions.get('window');
 
 export default StyleSheet.create({
-
+  
 });
