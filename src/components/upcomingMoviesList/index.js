@@ -10,12 +10,11 @@ class UpcomingMoviesList extends React.Component {
   }
 
   render() {
-    const padding = this.props.upcomingMovies.length;
-    console.log(padding);
+    // const padding = this.props.upcomingMovies.length;
     return (
       <View>
         <ScrollView
-          contentContainerStyle={{ paddingBottom: padding }}
+          contentContainerStyle={{ paddingBottom: 10 }}
         >
           {this.props.upcomingMovies.map((movie) => (
             <View>

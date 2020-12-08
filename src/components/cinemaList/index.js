@@ -12,10 +12,12 @@ class CinemaList extends React.Component {
 
   render() {
     // console.log('child: ', this.props);
+    const height = this.props.cinemas.length * 97;
+    console.log(height);
     return (
       <View>
         <ScrollView
-          contentContainerStyle={{ paddingBottom: 230 }}
+          contentContainerStyle={{ height }}
         >
           {this.props.cinemas.map((cinema) => (
             <View>
