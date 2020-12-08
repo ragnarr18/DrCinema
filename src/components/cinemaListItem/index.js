@@ -5,6 +5,7 @@ import {
 import { connect } from 'react-redux';
 import styles from './styles';
 import { currentCinema } from '../../actions/currentCinema';
+// import { getMoviesByCinemaId } from '../../actions/moviesActions';
 
 class CinemaListItem extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class CinemaListItem extends React.Component {
   }
 
   inspectCinema(navigation, cinemaObject) {
-    const {currentCinema} = this.props;
+    const { currentCinema } = this.props;
     const { navigationRedux } = this.props;
     currentCinema(cinemaObject);
     navigationRedux.navigate('CinemaDetails');
@@ -22,14 +23,20 @@ class CinemaListItem extends React.Component {
   render() {
     const { navigation } = this.props;
     const { item } = this.props;
+    // const { id } = item;
     const addr = item['address\t'];
+    // console.log(item.id);
+    // console.log(item);
     return (
       <View style={styles.itemContainer}>
         <TouchableOpacity
           onPress={() => this.inspectCinema(navigation, item)}
         >
           <Text style={styles.cinemaTitle}>{item.name}</Text>
-          <Text style={styles.subtitle}>Website: {item.website}</Text>
+          <Text style={styles.subtitle}>
+            Website:
+            {item.website}
+          </Text>
         </TouchableOpacity>
         {/* <Button
           title="See Cinema"
