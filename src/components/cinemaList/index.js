@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
-import CinemaListItem from '../cinemaDetailsListItem';
+import CinemaDetails from '../cinemaDetails';
 
 class CinemaList extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class CinemaList extends React.Component {
           {this.props.cinemas.map((cinema) => (
             <View>
               <Text>
-                <CinemaListItem />
+                <CinemaDetails />
               </Text>
             </View>
           ))}
