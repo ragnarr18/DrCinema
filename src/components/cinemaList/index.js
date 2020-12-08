@@ -9,6 +9,11 @@ class cinemaList extends React.Component {
     this.state = {};
   }
 
+  // componentDidUpdate (nextProps){
+  //   this.setState({data: nextProps.cinemas})
+  //   console.log(this.state);
+  // }
+
   render() {
     console.log('child: ', this.props);
     return (
@@ -28,3 +33,4 @@ class cinemaList extends React.Component {
 
 const mapStateToProps = ({ cinemas }) => ({ cinemas });
 export default connect(mapStateToProps)(cinemaList); // returns a connected component
+// export default connect(null)(cinemaList)

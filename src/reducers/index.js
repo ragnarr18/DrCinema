@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
 import changePage from './changePage';
-import cinema from './cinemaReducer';
-
+import cinemas from './cinemaReducer';
 
 export default combineReducers({
   changePage,
-  cinema
+  cinemas,
 });

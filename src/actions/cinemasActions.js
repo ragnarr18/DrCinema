@@ -4,7 +4,7 @@ import * as constants from '../constants';
 export const getCinemas = () => async (dispatch) => {
   try {
     const cinemas = await movieServices.getCinemas();
-    console.log(typeof cinemas);
+    // console.log(cinemas[0]);
     dispatch(getCinemasSuccess(cinemas));
   } catch (e) {
     // or dispatch error function

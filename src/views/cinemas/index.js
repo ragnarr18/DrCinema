@@ -14,8 +14,9 @@ class Cinemas extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.getCinemas();
+  async componentDidMount() {
+    await this.props.getCinemas();
+    console.log("parent; ", this.props.cinemas);
   }
 
   selectPage(number) {
@@ -32,7 +33,7 @@ class Cinemas extends React.Component {
           <Button
             title="One"
             onPress={() => this.selectPage(1)}
-          />
+          /> 
           <View style={{ height: 5 }} />
 
           <Button
@@ -44,5 +45,9 @@ class Cinemas extends React.Component {
     );
   }
 }
+const mapStateToProps = ({ cinemas }) => ({ cinemas });
 
-export default connect(null, { changePage, getCinemas })(Cinemas);
+export default connect(mapStateToProps, { changePage, getCinemas })(Cinemas);
+
+
+// export default connect(null, { changePage, getCinemas })(Cinemas);
