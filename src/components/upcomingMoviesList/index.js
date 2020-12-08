@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import UpcomingMoviesListItem from '../upcomingMoviesListItem';
 
@@ -10,17 +10,19 @@ class UpcomingMoviesList extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    const padding = this.props.upcomingMovies.length;
+    console.log(padding);
     return (
       <View>
-        <Text>
-          Hello there.
-        </Text>
-        {this.props.upcomingMovies.map((movie) => (
-          <View>
-            <UpcomingMoviesListItem item={movie} />
-          </View>
-        ))}
+        <ScrollView
+          contentContainerStyle={{ paddingBottom: padding }}
+        >
+          {this.props.upcomingMovies.map((movie) => (
+            <View>
+              <UpcomingMoviesListItem item={movie} />
+            </View>
+          ))}
+        </ScrollView>
       </View>
     );
   }
