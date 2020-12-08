@@ -17,7 +17,7 @@ class CinemaList extends React.Component {
           {this.props.cinemas.map((cinema) => (
             <View>
               <Text>
-                <CinemaListItem item={cinema} navigation={this.props.navigation}/>
+                <CinemaListItem item={cinema} />
               </Text>
             </View>
           ))}

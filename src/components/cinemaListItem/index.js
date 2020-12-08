@@ -9,13 +9,15 @@ import { currentCinema } from '../../actions/currentCinema';
 class CinemaListItem extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {};
   }
 
   inspectCinema(navigation, cinemaObject) {
     const {currentCinema} = this.props;
+    const { navigationRedux } = this.props;
     currentCinema(cinemaObject);
-    navigation.navigate('CinemaDetails');
+    navigationRedux.navigate('CinemaDetails');
   }
 
   render() {
@@ -37,6 +39,6 @@ class CinemaListItem extends React.Component {
   }
 }
 
-// const mapStateToProps = ({ currentCinema }) => ({ currentCinema });
+const mapStateToProps = ({ navigationRedux }) => ({ navigationRedux });
 
-export default connect(null, { currentCinema })(CinemaListItem);
+export default connect(mapStateToProps, { currentCinema })(CinemaListItem);
