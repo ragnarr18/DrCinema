@@ -15,8 +15,8 @@ class CinemaListItem extends React.Component {
     const {item} = this.props
     return (
       <View>
-        <Text>{item.Address}</Text>
-        <Text>{item.city}</Text>
+        <Text>{item.name}</Text>
+        <Text>{item.website}</Text>
         <Button
           title="See Cinema"
           // onPress={() => navigate('MovieDetails')}
