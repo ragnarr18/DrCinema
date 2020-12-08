@@ -1,0 +1,151 @@
+{
+        "_id": "5fcf9f6e034403e09dc5aca7",
+        "id": 13115,
+        "ids": {
+            "imdb": "10288566",
+            "rotten": null,
+            "tmdb": "0"
+        },
+        "title": "Druk",
+        "alternativeTitles": "Another Round",
+        "year": "2020",
+        "certificateIS": "12 ára",
+        "durationMinutes": 115,
+        "genres": [
+            {
+                "ID": 4,
+                "Name": "Drama",
+                "NameEN\t": "Drama"
+            }
+        ],
+        "poster": "http://kvikmyndir.is/images/poster/13115_500.jpg",
+        "actors_abridged": [
+            {
+                "name": "Mads Mikkelsen"
+            },
+            {
+                "name": "Thomas Bo Larsen"
+            }
+        ],
+        "directors_abridged": [
+            {
+                "name": "Thomas Vinterberg"
+            }
+        ],
+        "ratings": {
+            "imdb": "8.1",
+            "rotten_audience": null,
+            "rotten_critics": null
+        },
+    ---------->  "showtimes": [  <--------------------------
+            {
+                "cinema": {
+                    "id": 4,
+                    "name": "Laugarásbíó"
+                },
+                "schedule": [
+                    {
+                        "time": "17:40 (A)",
+                        "purchase_url": "http://kvikmyndahusio.azurewebsites.net/websales/show/574678/"
+                    },
+                    {
+                        "time": "19:40 (L)",
+                        "purchase_url": "http://kvikmyndahusio.azurewebsites.net/websales/show/574677/"
+                    },
+                    {
+                        "time": "20:00 (A)",
+                        "purchase_url": "http://kvikmyndahusio.azurewebsites.net/websales/show/574883/"
+                    }
+                ]
+            },
+            {
+                "cinema": {
+                    "id": 5,
+                    "name": "Bíó Paradís"
+                },
+                "schedule": [
+                    {
+                        "time": "20.00 (1)",
+                        "purchase_url": "https://tix.is/is/buyingflow/tickets/10708/"
+                    },
+                    {
+                        "time": "20.20 (2)",
+                        "purchase_url": "https://tix.is/is/buyingflow/tickets/10708/"
+                    }
+                ]
+            }
+        ],
+        "certificate": {
+            "is": "12 ára",
+            "color": "yellow",
+            "number": "12"
+        },
+        "trailers": [
+            {
+                "id": 580175,
+                "results": [
+                    {
+                        "id": "5edd0060f36a32001e883705",
+                        "iso_639_1": "en",
+                        "iso_3166_1": "US",
+                        "key": "f_FzLs92YFc",
+                        "name": "'Another Round' - first trailer for Thomas Vinterberg's Cannes 2020 title (exclusive)",
+                        "site": "YouTube",
+                        "size": 1080,
+                        "type": "Trailer",
+                        "url": "https://www.youtube.com/embed/f_FzLs92YFc?rel=0"
+                    }
+                ]
+            }
+        ],
+        "omdb": [
+            {
+                "Title": "Another Round",
+                "Year": "2020",
+                "Rated": "Not Rated",
+                "Released": "18 Dec 2020",
+                "Runtime": "117 min",
+                "Genre": "Drama",
+                "Director": "Thomas Vinterberg",
+                "Writer": "Thomas Vinterberg (screenplay), Tobias Lindholm (screenplay)",
+                "Actors": "Mads Mikkelsen, Thomas Bo Larsen, Magnus Millang, Lars Ranthe",
+                "Plot": "Four friends, all high school teachers, test a theory that they will improve their lives by maintaining a constant level of alcohol in their blood.",
+                "Language": "Danish, Swedish",
+                "Country": "Denmark, Sweden, Netherlands",
+                "Awards": "5 wins & 2 nominations.",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BNjA4YzA5YjEtNmY1OS00MTkwLWFmNzEtZWE3ZGM5ZGQxOWQwXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_SX300.jpg",
+                "Ratings": [
+                    {
+                        "Source": "Internet Movie Database",
+                        "Value": "8.1/10"
+                    },
+                    {
+                        "Source": "Metacritic",
+                        "Value": "72/100"
+                    }
+                ],
+                "Metascore": "72",
+                "imdbRating": "8.1",
+                "imdbVotes": "3,744",
+                "imdbID": "tt10288566",
+                "Type": "movie",
+                "tomatoMeter": "N/A",
+                "tomatoImage": "N/A",
+                "tomatoRating": "N/A",
+                "tomatoReviews": "N/A",
+                "tomatoFresh": "N/A",
+                "tomatoRotten": "N/A",
+                "tomatoConsensus": "N/A",
+                "tomatoUserMeter": "N/A",
+                "tomatoUserRating": "N/A",
+                "tomatoUserReviews": "N/A",
+                "tomatoURL": "N/A",
+                "DVD": "N/A",
+                "BoxOffice": "N/A",
+                "Production": "N/A",
+                "Website": "N/A",
+                "Response": "True"
+            }
+        ],
+        "plot": "Fjórir vinir, sem allir eru menntaskólakennarar, ákveða að sannreyna kenninguna um að þeim muni ganga betur í lífinu ef þeir eru alltaf með örlítið áfengismagn í blóðinu. Þessi tilraun á eftir að hafa óvæntar afleiðingar og sýna þeim félögum nýjar hliðar á sjálfum sér sem þeir áttu kannski ekki von á."
+    }
