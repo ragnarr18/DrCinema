@@ -5,6 +5,7 @@ import HtmlText from 'react-native-html-to-text';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CinemaDetailsList from '../../components/cinemaDetailsList';
 import styles from './styles';
+import { getMoviesByCinemaId } from '../../actions/moviesActions';
 
 class CinemaDetails extends React.Component {
   constructor(props) {
@@ -12,9 +13,17 @@ class CinemaDetails extends React.Component {
     this.state = {};
   }
 
+  componentDidMount () {
+    const { currentCinema } = this.props;
+    this.props.getMoviesByCinemaId(currentCinema.id);
+    // console.log("getMoviesByCinemaId: ", this.props);
+  }
+
+
   render() {
     // const { navigation } = this.props;
     const { currentCinema } = this.props;
+    console.log(currentCinema.id);
     const {
       name,
       description,
@@ -62,6 +71,6 @@ class CinemaDetails extends React.Component {
   }
 }
 
-const mapStateToProps = ({ currentCinema }) => ({ currentCinema });
+const mapStateToProps = ({ currentCinema, moviesByCinemaId }) => ({ currentCinema, moviesByCinemaId });
 
-export default connect(mapStateToProps)(CinemaDetails);
+export default connect(mapStateToProps, { getMoviesByCinemaId })(CinemaDetails);
