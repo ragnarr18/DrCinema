@@ -26,14 +26,15 @@ class Cinemas extends React.Component {
 
   render() {
     return (
-      <Provider store={createStore(reducers)}>
+      // <Provider store={createStore(reducers)}>
+      //Provider á bara að vera í app.js
         <View>
           <Text>HELLO</Text>
           <CinemaList />
           <Button
             title="One"
             onPress={() => this.selectPage(1)}
-          /> 
+          />
           <View style={{ height: 5 }} />
 
           <Button
@@ -41,7 +42,7 @@ class Cinemas extends React.Component {
             onPress={() => this.selectPage(2)}
           />
         </View>
-      </Provider>
+      // </Provider>
     );
   }
 }

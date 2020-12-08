@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import CinemaListItem from '../cinemaDetailsListItem';
 
-class cinemaList extends React.Component {
+class CinemaList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -20,8 +20,11 @@ class cinemaList extends React.Component {
       <View>
         <Text>
           Cinema List
-          {' '}
-          {this.props.cinemas}
+          {this.props.cinemas.map((cinema)=>(
+            <View>
+              <Text>A cinema</Text>
+            </View>
+          ))}
         </Text>
         {/* <CinemaListItem
           navigate={navigation.navigate}
@@ -32,5 +35,5 @@ class cinemaList extends React.Component {
 }
 
 const mapStateToProps = ({ cinemas }) => ({ cinemas });
-export default connect(mapStateToProps)(cinemaList); // returns a connected component
+export default connect(mapStateToProps)(CinemaList); // returns a connected component
 // export default connect(null)(cinemaList)
