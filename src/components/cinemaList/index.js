@@ -11,11 +11,11 @@ class CinemaList extends React.Component {
   }
 
   render() {
-    // console.log('child: ', this.props);
+    const padding = this.props.cinemas.length;
     return (
       <View>
         <ScrollView
-          contentContainerStyle={{ paddingBottom: 230 }}
+          contentContainerStyle={{ paddingBottom: padding + 220 }}
         >
           {this.props.cinemas.map((cinema) => (
             <View>
