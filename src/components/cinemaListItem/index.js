@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, Button,
+  View, Text, Button, Linking
 } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
@@ -24,8 +24,6 @@ class CinemaListItem extends React.Component {
     const addr = item['address\t'];
     return (
       <View>
-        <Text>{addr}</Text>
-        <Text>{item.city}</Text>
         <Text>{item.name}</Text>
         <Text>{item.website}</Text>
         <Button

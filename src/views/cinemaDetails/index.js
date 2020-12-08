@@ -16,7 +16,10 @@ class CinemaDetails extends React.Component {
     const address = currentCinema["address\t"];
     return (
       <View>
-        <Text>Cinema Name: {name}</Text>
+        <Text>
+          Cinema Name:
+          {name}
+        </Text>
         <Text>Cinema Description: {description}</Text>
         <Text>Cinema Address: {address}</Text>
         <Text>Cinema Phone: {phone}</Text>
