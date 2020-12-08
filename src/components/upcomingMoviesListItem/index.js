@@ -9,9 +9,10 @@ class UpcomingMoviesListItem extends React.Component {
   }
 
   render() {
+    const { item } = this.props;
     return (
       <View>
-        <Text>General Kenobi.</Text>
+        <Text>{item.title}</Text>
       </View>
     );
   }
