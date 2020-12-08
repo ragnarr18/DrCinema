@@ -18,6 +18,8 @@ class CinemaListItem extends React.Component {
       <View>
         <Text>{addr}</Text>
         <Text>{item.city}</Text>
+        <Text>{item.name}</Text>
+        <Text>{item.website}</Text>
         <Button
           title="See Cinema"
           // onPress={() => navigate('MovieDetails')}

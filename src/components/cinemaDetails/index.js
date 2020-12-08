@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import styles from './styles';
 
-class cinemaDetails extends React.Component {
+class CinemaDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -22,4 +22,4 @@ class cinemaDetails extends React.Component {
   }
 }
 
-export default cinemaDetails;
+export default CinemaDetails;
