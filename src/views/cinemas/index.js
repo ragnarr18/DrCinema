@@ -6,6 +6,7 @@ import CinemaList from '../../components/cinemaList';
 import { changePage } from '../../actions/changePage';
 import { getCinemas } from '../../actions/cinemasActions';
 import { navigationRedux } from '../../actions/navigationRedux';
+import styles from './styles';
 
 class Cinemas extends React.Component {
   constructor(props) {
@@ -37,8 +38,8 @@ class Cinemas extends React.Component {
           title="upcoming movies"
           onPress={() => navigation.navigate('UpcomingMovies')}
         />
-        <Text>CINEMA LIST</Text>
-        <Text>Click on a cinema to learn more about it.</Text>
+        <Text style={styles.title}>CINEMA LIST</Text>
+        <Text style={styles.description}>Click on a cinema to learn more about it.</Text>
         <CinemaList />
       </View>
     // </Provider>

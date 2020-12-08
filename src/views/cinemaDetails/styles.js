@@ -9,16 +9,27 @@ export default StyleSheet.create({
     padding: 5,
     backgroundColor: '#a9a9a9',
   },
+  description: {
+    fontSize: 14,
+    fontStyle: 'italic',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 5,
+  },
   title: {
     justifyContent: 'center',
     fontWeight: 'bold',
     fontSize: 24,
+    padding: 5,
   },
-  iconWrap: {
-    backgroundColor: 'white',
+  textWrap: {
     flex: 1,
     flexWrap: 'wrap',
-    flexDirection: 'column',
-    height: 300,
+    marginBottom: 15,
+    marginTop: 15,
+    justifyContent: 'center',
+  },
+  icon: {
+    padding: 5,
   },
 });
