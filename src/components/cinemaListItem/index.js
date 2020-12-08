@@ -12,10 +12,11 @@ class CinemaListItem extends React.Component {
 
   render() {
     // const { navigate } = this.props;
-    const {item} = this.props
+    const {item} = this.props;
+    const addr = item['address\t'];
     return (
       <View>
-        <Text>{item.Address}</Text>
+        <Text>{addr}</Text>
         <Text>{item.city}</Text>
         <Button
           title="See Cinema"
