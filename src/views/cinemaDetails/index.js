@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './styles';
-import CinemaDetailsList from '../../components/cinemaDetailsList';
+// import CinemaDetailsList from '../../components/cinemaDetailsList';
 
 class CinemaDetails extends React.Component {
   constructor(props) {
@@ -22,9 +22,6 @@ class CinemaDetails extends React.Component {
 
         <Text>This is where I want a list to appear:</Text>
 
-        <CinemaDetailsList
-          navigation={navigation}
-        />
       </View>
     );
   }
