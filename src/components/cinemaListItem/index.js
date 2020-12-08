@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, Button, Linking
+  View, Text, Button, TouchableOpacity, TouchableHighlight,
 } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
@@ -24,13 +24,17 @@ class CinemaListItem extends React.Component {
     const { item } = this.props;
     const addr = item['address\t'];
     return (
-      <View>
-        <Text>{item.name}</Text>
-        <Text>{item.website}</Text>
-        <Button
+      <View style={styles.itemContainer}>
+        <TouchableOpacity
+          onPress={() => this.inspectCinema(navigation, item)}
+        >
+          <Text style={styles.cinemaTitle}>{item.name}</Text>
+          <Text style={styles.subtitle}>Website: {item.website}</Text>
+        </TouchableOpacity>
+        {/* <Button
           title="See Cinema"
           onPress={() => this.inspectCinema(navigation, item)}
-        />
+        /> */}
       </View>
     );
   }
