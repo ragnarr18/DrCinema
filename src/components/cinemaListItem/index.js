@@ -12,13 +12,13 @@ class CinemaListItem extends React.Component {
 
   render() {
     // const { navigate } = this.props;
-    console.log('props', this.props);
+    const {item} = this.props
     return (
       <View>
-        <Text>{this.props.address}</Text>
-        <Text>{this.props.city}</Text>
+        <Text>{item.Address}</Text>
+        <Text>{item.city}</Text>
         <Button
-          title="Go to movieDetails"
+          title="See Cinema"
           // onPress={() => navigate('MovieDetails')}
           onPress={() => console.log('boop')}
         />
