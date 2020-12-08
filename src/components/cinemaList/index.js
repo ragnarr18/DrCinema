@@ -9,13 +9,8 @@ class CinemaList extends React.Component {
     this.state = {};
   }
 
-  // componentDidUpdate (nextProps){
-  //   this.setState({data: nextProps.cinemas})
-  //   console.log(this.state);
-  // }
-
   render() {
-    console.log('child: ', this.props);
+    // console.log('child: ', this.props);
     return (
       <View>
         <Text>
