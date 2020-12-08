@@ -5,11 +5,15 @@ import CinemaList from '../../components/cinemaList';
 
 import { changePage } from '../../actions/changePage';
 import { getCinemas } from '../../actions/cinemasActions';
+import { navigationRedux } from '../../actions/navigationRedux';
 
 class Cinemas extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    const { navigationRedux } = this.props;
+    const { navigation } = this.props;
+    navigationRedux(navigation);
   }
 
   async componentDidMount() {
@@ -29,7 +33,7 @@ class Cinemas extends React.Component {
     // Provider á bara að vera í app.js
       <View>
         <Text>CINEMA LIST</Text>
-        <CinemaList navigation={navigation} />
+        <CinemaList />
       </View>
     // </Provider>
     );
@@ -37,5 +41,5 @@ class Cinemas extends React.Component {
 }
 const mapStateToProps = ({ cinemas }) => ({ cinemas });
 
-export default connect(mapStateToProps, { changePage, getCinemas })(Cinemas);
+export default connect(mapStateToProps, { changePage, getCinemas, navigationRedux })(Cinemas);
 // here we are dispatching getCinemas and changePage
