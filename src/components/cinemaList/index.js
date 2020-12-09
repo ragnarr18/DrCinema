@@ -13,7 +13,6 @@ class CinemaList extends React.Component {
   render() {
     // console.log('child: ', this.props);
     const height = this.props.cinemas.length * 97;
-    console.log(height);
     return (
       <View>
         <ScrollView
@@ -21,7 +20,10 @@ class CinemaList extends React.Component {
         >
           {this.props.cinemas.map((cinema) => (
             <View>
-              <CinemaListItem item={cinema} navigation={this.props.navigation}/>
+              <CinemaListItem
+                item={cinema}
+                navigation={this.props.navigation}
+              />
             </View>
           ))}
         {/* <CinemaListItem
@@ -33,6 +35,7 @@ class CinemaList extends React.Component {
   }
 }
 
-const mapStateToProps = ({ cinemas }) => ({ cinemas }); // pulling cinems from store, same as (stateStore){return {cinemas: stateStore.cinemas}}
+const mapStateToProps = ({ cinemas }) => ({ cinemas });
+// pulling cinems from store, same as (stateStore){return {cinemas: stateStore.cinemas}}
 export default connect(mapStateToProps)(CinemaList); // returns a connected component
 // export default connect(null)(cinemaList)
