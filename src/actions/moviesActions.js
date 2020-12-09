@@ -1,11 +1,12 @@
 import movieServices from '../services/movieServices';
 import * as constants from '../constants';
 
+let movies = null;
 export const getMovies = () => async (dispatch) => {
   try {
-    const cinemas = await movieServices.getMovies();
+    movies = await movieServices.getMovies();
     // console.log(cinemas[0]);
-    dispatch(getMoviesSuccess(cinemas));
+    dispatch(getMoviesSuccess(movies));
   } catch (e) {
     // or dispatch error function
     console.log('error occured:', e);
@@ -17,17 +18,17 @@ export const getMovies = () => async (dispatch) => {
 //   payload: cinemas
 // });
 
-function getMoviesSuccess(cinemas) {
+function getMoviesSuccess(currentMovies) {
   return {
     type: constants.GET_MOVIES,
-    payload: cinemas,
+    payload: currentMovies,
   };
 }
 
 export const getMoviesByCinemaId = (id) => async (dispatch) => {
   try {
     // const cinemas = await movieServices.getMovies();
-    console.log("action: ", id);
+    console.log('action: ', id);
     // console.log(cinemas[0]);
     dispatch(getMoviesByCinemaIdSuccess(id));
   } catch (e) {
@@ -44,7 +45,7 @@ export const getMoviesByCinemaId = (id) => async (dispatch) => {
 function getMoviesByCinemaIdSuccess(id) {
   return {
     type: constants.GET_MOVIES_BY_CINEMA_ID,
-    payload: id,
+    payload: { id, movies },
   };
 }
 // const getCinemas = () => {
