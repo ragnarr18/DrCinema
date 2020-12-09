@@ -13,7 +13,6 @@ class MovieListItem extends React.Component {
   }
 
   inspectMovie(item) {
-    console.log(this.props);
     const { currentMovie } = this.props;
     const { navigationRedux } = this.props;
     currentMovie(item);
@@ -23,13 +22,14 @@ class MovieListItem extends React.Component {
   render() {
     const { item } = this.props;
     return (
-      <View>
-        <TouchableOpacity
-          onPress={() => this.inspectMovie(item)}
-        >
+      <TouchableOpacity
+        style={styles.container}
+        onPress={() => this.inspectMovie(item)}
+      >
+        <View>
           <Text style={styles.cinemaTitle}>{item.title}</Text>
-        </TouchableOpacity>
-      </View>
+        </View>
+      </TouchableOpacity>
     );
   }
 }

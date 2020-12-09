@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import HtmlText from 'react-native-html-to-text';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -22,7 +22,7 @@ class CinemaDetails extends React.Component {
   render() {
     // const { navigation } = this.props;
     const { currentCinema } = this.props;
-    console.log(currentCinema.id);
+    // console.log(currentCinema.id);
     const {
       name,
       description,
@@ -32,8 +32,9 @@ class CinemaDetails extends React.Component {
     } = currentCinema;
     const address = currentCinema['address\t'];
     const html = `<p>${description}</p>`;
+
     return (
-      <View>
+      <ScrollView contentContainer={{ flex: 1, flexGrow: 1 }}>
         <View style={styles.itemContainer}>
           <Text style={styles.title}>
             {name}
@@ -42,34 +43,35 @@ class CinemaDetails extends React.Component {
           <View style={styles.textWrap}>
             <Icon name="home" size={30} style={styles.icon} />
             <Text>
-              Address:
+              {'Address: '}
               {address}
-              ,
+              {', '}
               {city}
             </Text>
           </View>
           <View style={styles.textWrap}>
             <Icon name="phone" size={30} style={styles.icon} />
             <Text>
-              Phone:
+              {'Phone: '}
               {phone}
             </Text>
           </View>
           <View style={styles.textWrap}>
             <Icon name="link" size={30} style={styles.icon} />
             <Text>
-              Website:
+              {'Website: '}
               {website}
             </Text>
           </View>
         </View>
         <Text>Movies currently in this cinema:</Text>
+        <View style={{ height: 5 }} />
         <CinemaDetailsList />
-      </View>
+      </ScrollView>
     );
   }
 }
 
-const mapStateToProps = ({ currentCinema, moviesByCinemaId }) => ({ currentCinema, moviesByCinemaId });
+const mapStateToProps = ({ movies, currentCinema, moviesByCinemaId }) => ({ movies, currentCinema, moviesByCinemaId });
 
 export default connect(mapStateToProps, { getMoviesByCinemaId })(CinemaDetails);
