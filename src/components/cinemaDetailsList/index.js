@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import CinemaDetailsListItem from '../cinemaDetailsListItem';
+import { View, Text, ScrollView } from 'react-native';
+import MovieList from '../movieList';
 import styles from './styles';
 
 class CinemaDetailsList extends React.Component {
@@ -12,12 +12,7 @@ class CinemaDetailsList extends React.Component {
   render() {
     // console.log('child: ', this.props);
     return (
-      <View>
-        <View>
-          <Text>Hello there!</Text>
-          <CinemaDetailsListItem />
-        </View>
-      </View>
+      <MovieList />
     );
   }
 }

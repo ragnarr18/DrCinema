@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 import MovieListItem from '../movieListItem';
@@ -11,15 +11,15 @@ class CinemaList extends React.Component {
   }
 
   render() {
-    return (
+    const data = this.props.movies.map((item) => (
       <View>
-        <ScrollView>
-          {this.props.movies.map((movie) => (
-            <View>
-              <MovieListItem item={movie} />
-            </View>
-          ))}
-        </ScrollView>
+        <MovieListItem item={item} />
+      </View>
+    ));
+
+    return (
+      <View style={styles.list}>
+        {data}
       </View>
     );
   }

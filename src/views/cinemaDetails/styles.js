@@ -24,10 +24,11 @@ export default StyleSheet.create({
   },
   textWrap: {
     flex: 1,
-    flexWrap: 'wrap',
-    marginBottom: 15,
-    marginTop: 15,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    // flexWrap: 'wrap',
+    marginBottom: 5,
+    marginTop: 10,
+    justifyContent: 'flex-start',
   },
   icon: {
     padding: 5,
