@@ -13,9 +13,9 @@ class CinemaDetails extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { currentCinema } = this.props;
-    this.props.getMoviesByCinemaId(currentCinema.id);
+    await this.props.getMoviesByCinemaId(currentCinema.id);
     console.log('props: ', this.props);
   }
 
