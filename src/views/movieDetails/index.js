@@ -16,7 +16,7 @@ class MovieDetails extends React.Component {
   }
 
   render() {
-    const poster = <Image style={styles.image} source={{ uri: this.state.image }} resizeMode="contain" />;
+    const poster = <Image style={styles.image} source={{ uri: this.state.image }} resizeMode="cover" />;
     return (
       <View>
         <View style={styles.itemContainer}>
@@ -33,12 +33,14 @@ class MovieDetails extends React.Component {
           </Text>
           {poster}
           <Text>{this.state.description}</Text>
-          <Text>
+          <Text style={styles.genre}>
             Genres:
             {' '}
             {this.state.genres}
           </Text>
         </View>
+        <Text style={styles.title}>Sýningatímar</Text>
+        <Text>This is where I want a list to appear: [TO-DO]</Text>
       </View>
     );
   }
