@@ -13,12 +13,11 @@ class CinemaDetails extends React.Component {
     this.state = {};
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const { currentCinema } = this.props;
     this.props.getMoviesByCinemaId(currentCinema.id);
-    // console.log("getMoviesByCinemaId: ", this.props);
+    console.log('props: ', this.props);
   }
-
 
   render() {
     // const { navigation } = this.props;
