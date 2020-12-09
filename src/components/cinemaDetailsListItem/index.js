@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 import styles from './styles';
+import MovieList from '../movieList';
 
 class CinemaDetailsListItem extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class CinemaDetailsListItem extends React.Component {
   render() {
     return (
       <View>
-        <Text>General Kenobi.</Text>
+        <MovieList />
       </View>
     );
   }
