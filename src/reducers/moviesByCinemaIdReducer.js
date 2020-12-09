@@ -1,14 +1,13 @@
 import * as constants from '../constants';
 
 function getMoviesByCinemaId(state, id) {
-  console.log('state: ', state);
+  // console.log('state: ', state);
   const movies = [];
   let myObj = null;
   for (let i = 0; i < state.length; i++) {
     for (let y = 0; y < state[i].showtimes.length; y++) {
-      // console.log(state[i].showtimes[y]);
-      // console.log('state[i].showtimes[y].cinema: ', typeof state[i].showtimes[y].cinema);
       if (typeof state[i].showtimes[y].cinema === 'string') {
+        console.log("isString");
         if (state[i].showtimes[y].cinema === id.toString()) {
           myObj = {
             poster: state[i].poster,
