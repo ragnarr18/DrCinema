@@ -3,7 +3,7 @@ import { Text, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import HtmlText from 'react-native-html-to-text';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import CinemaDetailsList from '../../components/cinemaDetailsList';
+import MovieList from '../../components/movieList';
 import styles from './styles';
 import { getMoviesByCinemaId } from '../../actions/moviesActions';
 
@@ -66,7 +66,7 @@ class CinemaDetails extends React.Component {
         </View>
         <Text>Movies currently in this cinema:</Text>
         <View style={{ height: 5 }} />
-        <CinemaDetailsList />
+        <MovieList />
       </ScrollView>
     );
   }

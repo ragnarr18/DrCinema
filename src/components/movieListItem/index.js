@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, TouchableOpacity,
+  View, Text, TouchableOpacity, Image,
 } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
@@ -26,8 +26,11 @@ class MovieListItem extends React.Component {
         style={styles.container}
         onPress={() => this.inspectMovie(item)}
       >
-        <View>
-          <Text style={styles.cinemaTitle}>{item.title}</Text>
+        <View style={{ alignItems: 'center' }}>
+          <Image style={styles.image} source={{ uri: item.poster }} resizeMode="contain" />
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{item.title}</Text>
+          </View>
         </View>
       </TouchableOpacity>
     );
