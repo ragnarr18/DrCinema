@@ -3,9 +3,9 @@ import {
   View, Text, Button, TouchableOpacity, TouchableHighlight,
 } from 'react-native';
 import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation';
 import styles from './styles';
 import { currentCinema } from '../../actions/currentCinema';
-// import { getMoviesByCinemaId } from '../../actions/moviesActions';
 
 class CinemaListItem extends React.Component {
   constructor(props) {
@@ -13,40 +13,28 @@ class CinemaListItem extends React.Component {
     this.state = {};
   }
 
-  inspectCinema(navigation, cinemaObject) {
-    const { currentCinema } = this.props;
-    const { navigationRedux } = this.props;
-    currentCinema(cinemaObject);
-    navigationRedux.navigate('CinemaDetails');
+  inspectCinema(cinema) {
+    const { navigation, currentCinema } = this.props;
+    currentCinema(cinema);
+    navigation.navigate('CinemaDetails');
   }
 
   render() {
-    const { navigation } = this.props;
     const { item } = this.props;
-    // const { id } = item;
     const addr = item['address\t'];
-    // console.log(item.id);
-    // console.log(item);
     return (
       <View style={styles.itemContainer}>
         <TouchableOpacity
-          onPress={() => this.inspectCinema(navigation, item)}
+          onPress={() => this.inspectCinema(item)}
         >
           <Text style={styles.cinemaTitle}>{item.name}</Text>
           <Text style={styles.subtitle}>
-            Website:
             {item.website}
           </Text>
         </TouchableOpacity>
-        {/* <Button
-          title="See Cinema"
-          onPress={() => this.inspectCinema(navigation, item)}
-        /> */}
       </View>
     );
   }
 }
 
-const mapStateToProps = ({ navigationRedux }) => ({ navigationRedux });
-
-export default connect(mapStateToProps, { currentCinema })(CinemaListItem);
+export default connect(null, { currentCinema })(withNavigation(CinemaListItem));

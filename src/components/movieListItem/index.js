@@ -3,6 +3,7 @@ import {
   View, Text, TouchableOpacity, Image,
 } from 'react-native';
 import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation';
 import styles from './styles';
 import { currentMovie } from '../../actions/currentMovieAction';
 
@@ -13,10 +14,9 @@ class MovieListItem extends React.Component {
   }
 
   async inspectMovie(item) {
-    const { currentMovie } = this.props;
-    const { navigationRedux } = this.props;
+    const { navigation, currentMovie } = this.props;
     await currentMovie(item);
-    navigationRedux.navigate('MovieDetails');
+    navigation.navigate('MovieDetails');
   }
 
   render() {
@@ -32,21 +32,18 @@ class MovieListItem extends React.Component {
             <Text style={styles.title}>{item.title}</Text>
           </View>
           <Text>{item.year}</Text>
-          {/* maybe just some component for the genres or something? */}
           {item.genres.map((genre) => (
             // sko ég er að íhuga ef við höfum tíma að búa til filter sem fer í gegnum alls konar case í json svarinu frá servernum, cuz skoppa og skrítla genre-in eru tölur
-            <Text>
+            <Text style={{ fontSize: 10 }}>
               {' '}
               {genre.Name}
               {' '}
             </Text>
           ))}
-          {/* <Text>{item.genres}</Text> */}
         </View>
       </TouchableOpacity>
     );
   }
 }
 
-const mapStateToProps = ({ navigationRedux }) => ({ navigationRedux });
-export default connect(mapStateToProps, { currentMovie })(MovieListItem);
+export default connect(null, { currentMovie })(withNavigation(MovieListItem));

@@ -1,5 +1,3 @@
-export const INCREMENT = 'INCREMENT';
-export const CHANGEPAGE = 'CHANGEPAGE';
 export const GET_CINEMAS = 'GET_CINEMAS';
 export const GET_MOVIES = 'GET_MOVIES';
 export const GET_MOVIES_BY_CINEMA_ID = 'GET_MOVIES_BY_CINEMA_ID';
