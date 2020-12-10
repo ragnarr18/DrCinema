@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import CinemaListItem from '../cinemaListItem';
 
 class CinemaList extends React.Component {
@@ -10,7 +11,6 @@ class CinemaList extends React.Component {
   }
 
   render() {
-    // console.log('child: ', this.props);
     const height = this.props.cinemas.length * 97;
     return (
       <View>
