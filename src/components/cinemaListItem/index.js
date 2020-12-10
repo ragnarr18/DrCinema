@@ -29,7 +29,6 @@ class CinemaListItem extends React.Component {
         >
           <Text style={styles.cinemaTitle}>{item.name}</Text>
           <Text style={styles.subtitle}>
-            Website:
             {item.website}
           </Text>
         </TouchableOpacity>
