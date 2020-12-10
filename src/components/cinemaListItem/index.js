@@ -15,7 +15,7 @@ class CinemaListItem extends React.Component {
   }
 
   inspectCinema(cinema) {
-    const { navigation } = this.props;
+    const { navigation, currentCinema } = this.props;
     currentCinema(cinema);
     navigation.navigate('CinemaDetails');
   }
@@ -37,14 +37,5 @@ class CinemaListItem extends React.Component {
   }
 }
 
-CinemaListItem.propTypes = {
-  item: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    website: PropTypes.string.isRequired,
-  }).isRequired,
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func.isRequired,
-  }).isRequired,
-};
 
 export default connect(null, { currentCinema })(withNavigation(CinemaListItem));

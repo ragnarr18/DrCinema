@@ -21,6 +21,7 @@ class CinemaDetails extends React.Component {
   }
 
   render() {
+    console.log(this.props.currentCinema);
     const { currentCinema } = this.props;
     const {
       name,
@@ -29,7 +30,7 @@ class CinemaDetails extends React.Component {
       city,
       website,
     } = currentCinema;
-    const address = currentCinema['address\t'];
+    const address = currentCinema['address\t']; // hard to validate this name
     let html = 'no description available';
     if (description) {
       html = `<p>${description}</p>`;
@@ -79,10 +80,6 @@ class CinemaDetails extends React.Component {
     );
   }
 }
-
-CinemaDetails.propTypes = {
-  getMoviesByCinemaId: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = (
   { movies, currentCinema, moviesByCinemaId },
