@@ -25,7 +25,7 @@ class MovieDetails extends React.Component {
       />
     );
     return (
-      <View>
+      <View style={styles.background}>
         <ScrollView contentContainer={{ flex: 1, flexGrow: 1 }}>
           <View style={styles.itemContainer}>
             <Text style={styles.title}>{movie.title}</Text>
@@ -42,7 +42,7 @@ class MovieDetails extends React.Component {
               min
             </Text>
             {poster}
-            <Text>{movie.plot}</Text>
+            <Text style={styles.text}>{movie.plot}</Text>
             <Text style={styles.genre}>
               Genres:
               {' '}
@@ -50,7 +50,7 @@ class MovieDetails extends React.Component {
                 // sko ég er að íhuga ef við höfum tíma að búa til filter
                 // sem fer í gegnum alls konar case í json svarinu frá servernum,
                 // cuz skoppa og skrítla genre-in eru tölur
-                <Text key={genre.ID}>
+                <Text key={genre.ID} style={styles.text}>
                   {' '}
                   {genre.Name}
                   ,

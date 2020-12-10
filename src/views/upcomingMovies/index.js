@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import UpcomingMoviesList from '../../components/upcomingMoviesList';
 import { getUpcomingMovies } from '../../actions/upcomingMoviesActions';
+import styles from './styles';
 
 const stylesA = StyleSheet.create({
   WebViewContainer: {
@@ -29,7 +30,7 @@ class UpcomingMovies extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.background}>
         <UpcomingMoviesList openTrailer={() => this.getTrailer()} />
         {/* <TrailerModal
           closeModel={() => this.setState({ isTrailerModalOpen: false })}

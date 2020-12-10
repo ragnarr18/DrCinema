@@ -2,6 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import CinemaListItem from '../cinemaListItem';
+import styles from './styles';
 
 class CinemaList extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class CinemaList extends React.Component {
   render() {
     const height = this.props.cinemas.length * 100;
     return (
-      <View>
+      <View style={styles.background}>
         <ScrollView
           contentContainerStyle={{ height }}
         >

@@ -46,8 +46,8 @@ class UpcomingMoviesListItem extends React.Component {
           {poster}
           <View style={styles.textBox}>
             <Text style={styles.title}>{item.title}</Text>
-            <Text>{releaseDate}</Text>
-            <Text>{trailerText}</Text>
+            <Text style={styles.text}>{releaseDate}</Text>
+            <Text style={styles.text}>{trailerText}</Text>
           </View>
         </View>
       </TouchableOpacity>

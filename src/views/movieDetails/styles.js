@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../styles';
 
 export default StyleSheet.create({
+  background: {
+    backgroundColor: colors.platinum,
+  },
   image: {
     height: 500,
     width: 300,
@@ -13,23 +17,25 @@ export default StyleSheet.create({
   itemContainer: {
     margin: 10,
     padding: 5,
-    backgroundColor: '#a9a9a9',
+    backgroundColor: colors.pacificBlue,
     justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
+    color: colors.platinum,
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 24,
     padding: 5,
   },
   subtitle: {
-    color: '#7E7E7E',
+    color: colors.platinum,
     fontSize: 12,
     fontStyle: 'italic',
     textAlign: 'center',
   },
   genre: {
+    color: colors.platinum,
     fontWeight: 'bold',
     fontSize: 12,
     textAlign: 'left',
@@ -38,4 +44,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
   },
+  text: {
+    color: colors.platinum,
+  }
 });

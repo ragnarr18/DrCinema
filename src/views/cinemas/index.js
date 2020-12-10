@@ -7,7 +7,9 @@ import CinemaList from '../../components/cinemaList';
 
 import { getCinemas } from '../../actions/cinemasActions';
 import { getMovies } from '../../actions/moviesActions';
+
 import styles from './styles';
+import { colors } from '../../styles';
 
 class Cinemas extends React.Component {
   constructor(props) {
@@ -25,9 +27,9 @@ class Cinemas extends React.Component {
   render() {
     const { navigation } = this.props;
     return (
-      <View>
+      <View style={styles.background}>
         <Button
-          color="#11ab11"
+          color={colors.pacificBlue}
           title="upcoming movies"
           onPress={() => navigation.navigate('UpcomingMovies')}
         />

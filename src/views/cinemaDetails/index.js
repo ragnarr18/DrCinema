@@ -36,7 +36,7 @@ class CinemaDetails extends React.Component {
     }
 
     return (
-      <ScrollView contentContainer={{ flex: 1, flexGrow: 1 }}>
+      <ScrollView contentContainer={styles.contentContainer}>
         <View style={styles.itemContainer}>
           <Text style={styles.title}>
             {name}

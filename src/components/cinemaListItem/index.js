@@ -23,7 +23,7 @@ class CinemaListItem extends React.Component {
   render() {
     const { item } = this.props;
     return (
-      <View style={styles.itemContainer}>
+      <View style={[styles.itemContainer, styles.background]}>
         <TouchableOpacity
           onPress={() => this.inspectCinema(item)}
         >

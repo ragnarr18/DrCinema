@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../styles';
 
 export default StyleSheet.create({
-  scrollList: {
-  },
+  background: {
+    backgroundColor: colors.platinum,
+  }
 });

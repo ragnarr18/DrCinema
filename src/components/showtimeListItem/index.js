@@ -3,6 +3,7 @@ import {
   View, Button, Linking,
 } from 'react-native';
 import styles from './styles';
+import { colors } from '../../styles';
 
 class ShowtimeListItem extends React.Component {
   constructor(props) {
@@ -18,7 +19,12 @@ class ShowtimeListItem extends React.Component {
 
     return (
       <View style={styles.button}>
-        <Button title={time} disabled={!passed} onPress={() => { Linking.openURL(url); }} />
+        <Button
+          title={time}
+          disabled={!passed}
+          color={colors.cgBlue}
+          onPress={() => { Linking.openURL(url); }}
+        />
       </View>
     );
   }
