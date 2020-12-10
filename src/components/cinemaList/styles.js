@@ -1,9 +1,6 @@
-import { StyleSheet, Dimensions } from 'react-native';
-
-const { width: winWidth } = Dimensions.get('window');
-const { height: winHeight } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   scrollList: {
-  }
+  },
 });
