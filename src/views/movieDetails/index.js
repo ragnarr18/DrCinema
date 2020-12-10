@@ -52,7 +52,7 @@ class MovieDetails extends React.Component {
             </Text>
           </View>
           <Text style={styles.title}>Sýningatímar</Text>
-          <Text>This is where I want a list to appear: [TO-DO]</Text>
+          <Text style={styles.subtitle}>Click on a button to buy a ticket for the show!</Text>
           <ShowtimeList movie={movie} />
         </ScrollView>
       </View>

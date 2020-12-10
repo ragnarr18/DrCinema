@@ -9,5 +9,5 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-  }
+  },
 });
