@@ -33,7 +33,9 @@ class MovieListItem extends React.Component {
           </View>
           <Text>{item.year}</Text>
           {item.genres.map((genre) => (
-            // sko ég er að íhuga ef við höfum tíma að búa til filter sem fer í gegnum alls konar case í json svarinu frá servernum, cuz skoppa og skrítla genre-in eru tölur
+            // sko ég er að íhuga ef við höfum tíma að búa til filter
+            // sem fer í gegnum alls konar case í json svarinu frá servernum,
+            // cuz skoppa og skrítla genre-in eru tölur
             <Text style={{ fontSize: 10 }}>
               {' '}
               {genre.Name}

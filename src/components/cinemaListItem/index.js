@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  View, Text, Button, TouchableOpacity, TouchableHighlight,
+  View, Text, TouchableOpacity,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import { currentCinema } from '../../actions/currentCinema';
 
@@ -14,14 +15,13 @@ class CinemaListItem extends React.Component {
   }
 
   inspectCinema(cinema) {
-    const { navigation, currentCinema } = this.props;
+    const { navigation } = this.props;
     currentCinema(cinema);
     navigation.navigate('CinemaDetails');
   }
 
   render() {
     const { item } = this.props;
-    const addr = item['address\t'];
     return (
       <View style={styles.itemContainer}>
         <TouchableOpacity
@@ -36,5 +36,11 @@ class CinemaListItem extends React.Component {
     );
   }
 }
+
+CinemaListItem.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default connect(null, { currentCinema })(withNavigation(CinemaListItem));

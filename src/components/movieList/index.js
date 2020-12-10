@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  View, Text, ScrollView, FlatList,
-} from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 import MovieListItem from '../movieListItem';
@@ -27,5 +25,6 @@ class CinemaList extends React.Component {
   }
 }
 
-const mapStateToProps = ({ moviesByCinemaId }) => ({ moviesByCinemaId }); // pulling cinems from store, same as (stateStore){return {cinemas: stateStore.cinemas}}
+const mapStateToProps = ({ moviesByCinemaId }) => ({ moviesByCinemaId });
+// pulling cinems from store, same as (stateStore){return {cinemas: stateStore.cinemas}}
 export default connect(mapStateToProps)(CinemaList); // returns a connected component

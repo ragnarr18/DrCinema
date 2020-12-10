@@ -3,7 +3,7 @@ import {
   View,
   Text,
   Image,
-  ScrollView
+  ScrollView,
 } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
