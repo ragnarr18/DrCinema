@@ -22,7 +22,7 @@ class MovieDetails extends React.Component {
 
   render() {
     const poster = <Image style={styles.image} source={{ uri: this.state.image }} resizeMode="cover" />;
-    console.log('currentMovie: ', this.props.currentMovie);
+    // console.log('currentMovie: ', this.props.currentMovie);
     // HERE IS THE MOVIE
     return (
       <View>

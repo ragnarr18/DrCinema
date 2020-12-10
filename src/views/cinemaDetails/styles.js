@@ -33,4 +33,10 @@ export default StyleSheet.create({
   icon: {
     padding: 5,
   },
+  showingMovies: {
+    marginTop: 20,
+    alignSelf: 'center',
+    fontSize: 20,
+    textDecorationLine: 'underline',
+  }
 });

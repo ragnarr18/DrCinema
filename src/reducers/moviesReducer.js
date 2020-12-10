@@ -3,7 +3,7 @@ import * as constants from '../constants';
 function getMoviesByCinemaId(state, action) {
   // console.log("function");
   // const stateList = Object.keys(state);
-  console.log("state: ",  state);
+  // console.log("state: ",  state);
   const movies = [];
   for (let i = 0; i < state.length; i++) {
     // console.log("single movie", state[i].showtimes.length);
@@ -13,7 +13,7 @@ function getMoviesByCinemaId(state, action) {
     // console.log(state[i].id);
     for (let y = 0; y < state[i].showtimes.length; y++) {
       // console.log("single movie", state[i].showtimes[y], "i: ", i);
-      console.log(state[i].showtimes[y].cinema.id === action.payload);
+      // console.log(state[i].showtimes[y].cinema.id === action.payload);
       if (state[i].showtimes[y].cinema.id === action.payload) {
         const myObj = {
           poster: state[i].poster,
@@ -28,13 +28,13 @@ function getMoviesByCinemaId(state, action) {
       }
     }
   }
-  console.log(movies);
+  // console.log(movies);
   return movies;
 }
 
 export default function (state = [], action) {
-  console.log("action.type movies: ", action.type);
-  console.log("payload movies", action.payload);
+  // console.log("action.type movies: ", action.type);
+  // console.log("payload movies", action.payload);
   switch (action.type) {
     case constants.GET_MOVIES:
       return action.payload;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation';
 import HtmlText from 'react-native-html-to-text';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MovieList from '../../components/movieList';
@@ -16,13 +17,10 @@ class CinemaDetails extends React.Component {
   async componentDidMount() {
     const { currentCinema } = this.props;
     await this.props.getMoviesByCinemaId(currentCinema.id);
-    console.log('props: ', this.props);
   }
 
   render() {
-    // const { navigation } = this.props;
     const { currentCinema } = this.props;
-    // console.log(currentCinema.id);
     const {
       name,
       description,
@@ -64,8 +62,7 @@ class CinemaDetails extends React.Component {
             </Text>
           </View>
         </View>
-        <Text>Movies currently in this cinema:</Text>
-        <View style={{ height: 5 }} />
+        <Text style={styles.showingMovies}>Movies now showing</Text>
         <MovieList />
       </ScrollView>
     );
@@ -74,4 +71,4 @@ class CinemaDetails extends React.Component {
 
 const mapStateToProps = ({ movies, currentCinema, moviesByCinemaId }) => ({ movies, currentCinema, moviesByCinemaId });
 
-export default connect(mapStateToProps, { getMoviesByCinemaId })(CinemaDetails);
+export default connect(mapStateToProps, { getMoviesByCinemaId })(withNavigation(CinemaDetails));

@@ -7,7 +7,7 @@ function getMoviesByCinemaId(state, id) {
   for (let i = 0; i < state.length; i++) {
     for (let y = 0; y < state[i].showtimes.length; y++) {
       if (typeof state[i].showtimes[y].cinema === 'string') {
-        console.log("isString");
+        // console.log("isString");
         if (state[i].showtimes[y].cinema === id.toString()) {
           myObj = {
             poster: state[i].poster,
@@ -35,13 +35,13 @@ function getMoviesByCinemaId(state, id) {
       }
     }
   }
-  console.log(movies);
+  // console.log(movies);
   return movies;
 }
 
 export default function (state = [], action) {
-  console.log('action.type: ', action.type);
-  console.log('payload', action.payload);
+  // console.log('action.type: ', action.type);
+  // console.log('payload', action.payload);
   switch (action.type) {
     case constants.GET_MOVIES_BY_CINEMA_ID:
     return getMoviesByCinemaId(action.payload.movies, action.payload.id);
