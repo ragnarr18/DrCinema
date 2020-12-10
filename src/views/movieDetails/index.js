@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-// import { WebView } from 'react-native-webview'; not working for android atm probably needs  "react-native link" 
+import { WebView } from 'react-native-webview';
+import { Video } from 'expo-av';
+// import { WebView } from 'react-native-webview'; not working for android atm probably needs  "react-native link"
 // import Video from '../../components/videoComponent';
 import styles from './styles';
 
@@ -24,6 +26,19 @@ class MovieDetails extends React.Component {
     // HERE IS THE MOVIE
     return (
       <View>
+        <View style={{ padding: 20, margin: 10 }}>
+          <Text>video</Text>
+          <Video
+            source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+            rate={1.0}
+            volume={1.0}
+            isMuted={false}
+            resizeMode="cover"
+            shouldPlay
+            isLooping
+            style={{ width: 300, height: 300 }}
+          />
+        </View>
         <View style={styles.itemContainer}>
           <Text style={styles.title}>{this.state.name}</Text>
           <Text style={styles.subtitle}>
