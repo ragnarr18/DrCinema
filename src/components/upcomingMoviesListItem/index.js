@@ -14,12 +14,13 @@ class UpcomingMoviesListItem extends React.Component {
     this.state = {};
   }
 
-  async setCurrentUpcomingMovie() {
-    const { item, openTrailer } = this.props;
-     await this.props.getCurrentUpcomingMovie(item);
-    console.log("child props: ", this.props);
-
-    openTrailer();
+  async setCurrentUpcomingMovie(status) {
+    if (status) {
+      const { item, openTrailer } = this.props;
+      await this.props.getCurrentUpcomingMovie(item);
+      console.log("child props: ", this.props);
+      openTrailer();
+    }
   }
 
   render() {
@@ -33,13 +34,20 @@ class UpcomingMoviesListItem extends React.Component {
         </View>
       );
     }
+    let trailerText = '(No available trailer)';
+    let trailerAvailable = false;
+    if (item.trailers && item.trailers.length > 0 && item.trailers[0].results.length > 0) {
+      trailerText = '(click to see trailer)'
+      trailerAvailable = true;
+    }
     return (
-      <TouchableOpacity onPress={() => this.setCurrentUpcomingMovie()}>
+      <TouchableOpacity onPress={() => this.setCurrentUpcomingMovie(trailerAvailable)}>
         <View style={styles.movieContainer}>
           {poster}
           <View style={styles.textBox}>
             <Text style={styles.title}>{item.title}</Text>
             <Text>{releaseDate}</Text>
+            <Text>{trailerText}</Text>
           </View>
         </View>
       </TouchableOpacity>

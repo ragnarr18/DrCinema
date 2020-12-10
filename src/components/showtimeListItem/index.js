@@ -1,8 +1,7 @@
 import React from 'react';
 import {
-  Text, View, Button, Image, Linking, Alert
+  View, Button, Linking,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 class ShowtimeListItem extends React.Component {
@@ -10,16 +9,6 @@ class ShowtimeListItem extends React.Component {
     super(props);
     this.state = {};
   }
-
-  /*
-  pressed(status) {
-    if (status) {
-      Linking.openURL(url);
-    } else {
-      Alert.alert('Tickets are no longer available for this showing');
-    }
-  }
-  */
 
   render() {
     const { time, url } = this.props;

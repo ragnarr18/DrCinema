@@ -12,13 +12,14 @@ class CinemaList extends React.Component {
   render() {
     // console.log('child: ', this.props);
     const height = this.props.cinemas.length * 97;
+    console.log('A');
     return (
       <View>
         <ScrollView
           contentContainerStyle={{ height }}
         >
           {this.props.cinemas.map((cinema) => (
-            <View>
+            <View key={cinema.name}>
               <CinemaListItem
                 item={cinema}
                 navigation={this.props.navigation} // withNavigation  i staðinn í child
