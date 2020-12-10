@@ -12,7 +12,7 @@ class CinemaList extends React.Component {
 
   render() {
     const data = this.props.moviesByCinemaId.map((item) => (
-      <View>
+      <View key={item.title}>
         <MovieListItem item={item} />
       </View>
     ));
