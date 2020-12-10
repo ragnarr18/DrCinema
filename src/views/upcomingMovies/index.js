@@ -1,19 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { WebView } from 'react-native-webview';
 import UpcomingMoviesList from '../../components/upcomingMoviesList';
 import { getUpcomingMovies } from '../../actions/upcomingMoviesActions';
-import TrailerModal from '../../modals/trailerModal';
 
 const stylesA = StyleSheet.create({
-
-WebViewContainer: {
-
+  WebViewContainer: {
     marginTop: (Platform.OS === 'android') ? 20 : 0,
-
-  }
-
+  },
 });
 
 class UpcomingMovies extends React.Component {
@@ -22,20 +16,18 @@ class UpcomingMovies extends React.Component {
     this.state = { isTrailerModalOpen: false };
   }
 
+  async componentDidMount() {
+    // const { getUpcomingMovies } = this.props;
+    await getUpcomingMovies();
+  }
+
   getTrailer(id) {
     const { currentUpcomingMovie, navigation } = this.props;
-    console.log('parent props: ', this.props);
     navigation.navigate('Trailer');
     this.setState({ isTrailerModalOpen: true });
   }
 
-  async componentDidMount() {
-    const { getUpcomingMovies } = this.props;
-    await getUpcomingMovies();
-  }
-
   render() {
-    const { isTrailerModalOpen } = this.state;
     return (
       <View>
         <UpcomingMoviesList openTrailer={() => this.getTrailer()} />
@@ -47,7 +39,7 @@ class UpcomingMovies extends React.Component {
           closeModel={() => this.setState({ isTrailerModalOpen: false })}
           isOpen={isTrailerModalOpen}>
           {/* <View> */}
-            {/* <View style={{ height: 300, width: 300}}>
+        {/* <View style={{ height: 300, width: 300}}>
               <WebView
                 style={stylesA.WebViewContainer}
                 allowsFullscreenVideo
