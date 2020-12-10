@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  Text, View, Button, Image, TouchableOpacity,
+  Text, View, Image, TouchableOpacity,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { withNavigation } from 'react-navigation';
+import PropTypes from 'prop-types';
+// import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { getCurrentUpcomingMovie } from '../../actions/currentUpcomingMovieActions';
 import styles from './styles';
@@ -18,7 +19,7 @@ class UpcomingMoviesListItem extends React.Component {
     if (status) {
       const { item, openTrailer } = this.props;
       await this.props.getCurrentUpcomingMovie(item);
-      console.log("child props: ", this.props);
+      // console.log("child props: ", this.props);
       openTrailer();
     }
   }
@@ -54,6 +55,16 @@ class UpcomingMoviesListItem extends React.Component {
     );
   }
 }
+
+UpcomingMoviesListItem.propTypes = {
+  item: PropTypes.shape({
+    poster: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
+  openTrailer: PropTypes.func.isRequired,
+  getCurrentUpcomingMovie: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = ({ currentUpcomingMovie }) => ({ currentUpcomingMovie });
 export default connect(mapStateToProps, { getCurrentUpcomingMovie })(UpcomingMoviesListItem);
 // export default withNavigation(UpcomingMoviesListItem);

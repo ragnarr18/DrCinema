@@ -38,5 +38,5 @@ export default StyleSheet.create({
   justifyText: {
     paddingTop: 7,
     paddingLeft: 5,
-  }
+  },
 });

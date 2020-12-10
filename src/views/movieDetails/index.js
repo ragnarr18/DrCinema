@@ -6,6 +6,7 @@ import {
   ScrollView,
 } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import ShowtimeList from '../../components/showtimeList';
 
@@ -66,6 +67,20 @@ class MovieDetails extends React.Component {
     );
   }
 }
+
+MovieDetails.propTypes = {
+  currentMovie: PropTypes.shape({
+    poster: PropTypes.string,
+    title: PropTypes.string,
+    year: PropTypes.string,
+    durationMinutes: PropTypes.number,
+    plot: PropTypes.string,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
 const mapStateToProps = ({ currentMovie }) => ({ currentMovie });
 export default connect(mapStateToProps)(MovieDetails);
 // export default MovieDetails;

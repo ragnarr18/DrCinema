@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  View, Image, StyleSheet, Platform,
+  View, StyleSheet, Platform,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { WebView } from 'react-native-webview';
-import Icon from 'react-native-vector-icons/FontAwesome';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 const stylesA = StyleSheet.create({
@@ -46,7 +46,6 @@ Trailer.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
   }).isRequired,
-  currentMovie: PropTypes.func.isRequired,
 };
 
 export default Trailer;

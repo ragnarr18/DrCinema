@@ -18,9 +18,9 @@ class CinemaList extends React.Component {
     ));
     const noMovies = (
       <View style={styles.noMovies}>
-        <Text style={{fontSize: 15, fontStyle: 'italic'}}>There are no movies currently showing in this cinema</Text>
+        <Text style={{ fontSize: 15, fontStyle: 'italic' }}>There are no movies currently showing in this cinema</Text>
       </View>
-    )
+    );
 
     const data = movies.length > 0 ? movies : noMovies;
 
