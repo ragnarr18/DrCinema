@@ -10,18 +10,16 @@ import styles from './styles';
 class Trailer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isTrailerModalOpen: false };
-  }
-
-  getTrailer(id) {
-    const { currentUpcomingMovie } = this.props;
-    console.log('parent props: ', this.props);
-    this.setState({ isTrailerModalOpen: true });
+    this.state = {};
   }
 
   async componentDidMount() {
     const { getUpcomingMovies } = this.props;
     await getUpcomingMovies();
+  }
+
+  getTrailer() {
+    const { currentUpcomingMovie } = this.props;
   }
 
   render() {
@@ -37,10 +35,6 @@ class Trailer extends React.Component {
           <Text>{plot}</Text>
         </View>
       <View style={styles.container}>
-
-        {/* <ImageBackground source={{ uri: this.props.currentUpcomingMovie.poster }} style={styles.backgroundImage} /> */}
-        {/* <Text>{this.props.currentUpcomingMovie.trailers[0]['results'][0]['url']}</Text> */}
-        {/* <Text>{this.props.currentUpcomingMovie.title}</Text> */}
         <WebView
           style={styles.WebViewContainer}
           allowsFullscreenVideo

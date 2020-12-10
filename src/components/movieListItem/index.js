@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import { currentMovie } from '../../actions/currentMovieAction';
 
@@ -31,12 +32,12 @@ class MovieListItem extends React.Component {
           <View style={styles.titleContainer}>
             <Text style={styles.title}>{item.title}</Text>
           </View>
-          <Text>{item.year}</Text>
+          <Text style={styles.text}>{item.year}</Text>
           {item.genres.map((genre) => (
             // sko ég er að íhuga ef við höfum tíma að búa til filter
             // sem fer í gegnum alls konar case í json svarinu frá servernum,
             // cuz skoppa og skrítla genre-in eru tölur
-            <Text key={genre.ID} style={{ fontSize: 10 }}>
+            <Text key={genre.ID} style={[styles.text, { fontSize: 10 }]}>
               {' '}
               {genre.Name}
               {' '}
@@ -47,5 +48,17 @@ class MovieListItem extends React.Component {
     );
   }
 }
+
+MovieListItem.propTypes = {
+  item: PropTypes.shape({
+    poster: PropTypes.string,
+    title: PropTypes.string,
+    year: PropTypes.string,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+  currentMovie: PropTypes.func.isRequired,
+};
 
 export default connect(null, { currentMovie })(withNavigation(MovieListItem));

@@ -36,7 +36,7 @@ class CinemaDetails extends React.Component {
     }
 
     return (
-      <ScrollView contentContainer={{ flex: 1, flexGrow: 1 }}>
+      <ScrollView contentContainer={styles.contentContainer}>
         <View style={styles.itemContainer}>
           <Text style={styles.title}>
             {name}
@@ -79,6 +79,18 @@ class CinemaDetails extends React.Component {
     );
   }
 }
+
+CinemaDetails.propTypes = {
+  currentCinema: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    phone: PropTypes.string,
+    city: PropTypes.string,
+    website: PropTypes.string,
+  }).isRequired,
+  getMoviesByCinemaId: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (
   { movies, currentCinema, moviesByCinemaId },

@@ -1,8 +1,8 @@
-import { StyleSheet, Dimensions } from 'react-native';
-
-const { width: winWidth } = Dimensions.get('window');
-const { height: winHeight } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
+import { colors } from '../../styles/index';
 
 export default StyleSheet.create({
-  
+  background: {
+    backgroundColor: colors.platinum,
+  }
 });

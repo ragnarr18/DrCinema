@@ -1,12 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../styles';
 
 export default StyleSheet.create({
   movieContainer: {
     flexDirection: 'row',
     margin: 7,
     padding: 5,
-    backgroundColor: colors.pacificBlue,
+    backgroundColor: '#bbbbbb',
   },
   icon: {
     height: 100,
@@ -23,11 +22,7 @@ export default StyleSheet.create({
     paddingLeft: 10,
   },
   title: {
-    color: colors.platinum,
     fontSize: 17,
     flexShrink: 1,
-  },
-  text: {
-    color: colors.platinum,
   },
 });
