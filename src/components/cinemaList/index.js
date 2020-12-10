@@ -10,7 +10,6 @@ class CinemaList extends React.Component {
   }
 
   render() {
-    // console.log('child: ', this.props);
     const height = this.props.cinemas.length * 97;
     console.log('A');
     return (
