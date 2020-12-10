@@ -21,7 +21,7 @@ class ShowtimeList extends React.Component {
       </View>
     ))
     return (
-      <View>
+      <View style={styles.list}>
         {showtimes}
       </View>
     );

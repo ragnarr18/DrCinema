@@ -15,7 +15,7 @@ class ShowtimeListItem extends React.Component {
     const { time, url } = this.props;
     console.log(time);
     return (
-      <View>
+      <View style={styles.button}>
         <Button title={time} onPress={() => { Linking.openURL(url); }} />
       </View>
     );
