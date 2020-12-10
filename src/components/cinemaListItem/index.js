@@ -37,5 +37,15 @@ class CinemaListItem extends React.Component {
   }
 }
 
+CinemaListItem.propTypes = {
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    website: PropTypes.string,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+  currentCinema: PropTypes.func.isRequired,
+};
 
 export default connect(null, { currentCinema })(withNavigation(CinemaListItem));
