@@ -12,10 +12,10 @@ class MovieListItem extends React.Component {
     this.state = {};
   }
 
-  inspectMovie(item) {
+  async inspectMovie(item) {
     const { currentMovie } = this.props;
     const { navigationRedux } = this.props;
-    currentMovie(item);
+    await currentMovie(item);
     navigationRedux.navigate('MovieDetails');
   }
 
@@ -31,6 +31,17 @@ class MovieListItem extends React.Component {
           <View style={styles.titleContainer}>
             <Text style={styles.title}>{item.title}</Text>
           </View>
+          <Text>{item.year}</Text>
+          {/* maybe just some component for the genres or something? */}
+          {item.genres.map((genre) => (
+            // sko ég er að íhuga ef við höfum tíma að búa til filter sem fer í gegnum alls konar case í json svarinu frá servernum, cuz skoppa og skrítla genre-in eru tölur
+            <Text>
+              {' '}
+              {genre.Name}
+              {' '}
+            </Text>
+          ))}
+          {/* <Text>{item.genres}</Text> */}
         </View>
       </TouchableOpacity>
     );

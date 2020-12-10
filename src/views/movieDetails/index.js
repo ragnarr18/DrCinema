@@ -1,5 +1,8 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import { connect } from 'react-redux';
+// import { WebView } from 'react-native-webview'; not working for android atm probably needs  "react-native link" 
+// import Video from '../../components/videoComponent';
 import styles from './styles';
 
 class MovieDetails extends React.Component {
@@ -17,6 +20,8 @@ class MovieDetails extends React.Component {
 
   render() {
     const poster = <Image style={styles.image} source={{ uri: this.state.image }} resizeMode="cover" />;
+    console.log('currentMovie: ', this.props.currentMovie);
+    // HERE IS THE MOVIE
     return (
       <View>
         <View style={styles.itemContainer}>
@@ -45,5 +50,6 @@ class MovieDetails extends React.Component {
     );
   }
 }
-
-export default MovieDetails;
+const mapStateToProps = ({ currentMovie }) => ({ currentMovie });
+export default connect(mapStateToProps)(MovieDetails);
+// export default MovieDetails;

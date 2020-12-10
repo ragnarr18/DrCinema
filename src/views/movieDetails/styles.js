@@ -38,4 +38,7 @@ export default StyleSheet.create({
     textAlign: 'left',
     padding: 10,
   },
+  container: {
+    flex: 1,
+  },
 });

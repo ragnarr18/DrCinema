@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, ScrollView, FlatList } from 'react-native';
+import {
+  View, Text, ScrollView, FlatList,
+} from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 import MovieListItem from '../movieListItem';
