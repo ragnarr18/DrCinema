@@ -38,6 +38,10 @@ class CinemaListItem extends React.Component {
 }
 
 CinemaListItem.propTypes = {
+  item: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    website: PropTypes.string.isRequired,
+  }).isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
   }).isRequired,

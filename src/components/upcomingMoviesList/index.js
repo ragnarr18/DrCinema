@@ -18,7 +18,7 @@ class UpcomingMoviesList extends React.Component {
           contentContainerStyle={{ paddingBottom: 10 }}
         >
           {this.props.upcomingMovies.map((movie) => (
-            <View>
+            <View key={movie.title}>
               <UpcomingMoviesListItem item={movie} openTrailer={openTrailer} />
             </View>
           ))}
