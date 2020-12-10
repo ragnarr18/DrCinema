@@ -32,6 +32,9 @@ class CinemaDetails extends React.Component {
     } = currentCinema;
     const address = currentCinema['address\t'];
     const html = `<p>${description}</p>`;
+    // if (description === `<p>null</p>`) {
+    //   html = 'No description available'
+    // }
 
     return (
       <ScrollView contentContainer={{ flex: 1, flexGrow: 1 }}>
@@ -72,6 +75,8 @@ class CinemaDetails extends React.Component {
   }
 }
 
-const mapStateToProps = ({ movies, currentCinema, moviesByCinemaId }) => ({ movies, currentCinema, moviesByCinemaId });
+const mapStateToProps = (
+  { movies, currentCinema, moviesByCinemaId },
+) => ({ movies, currentCinema, moviesByCinemaId });
 
 export default connect(mapStateToProps, { getMoviesByCinemaId })(CinemaDetails);
