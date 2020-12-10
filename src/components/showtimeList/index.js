@@ -13,9 +13,16 @@ class ShowtimeList extends React.Component {
   }
 
   render() {
+    const { movie } = this.props;
+    console.log(movie);
+    const showtimes = movie.showtimes.map((show) => (
+      <View>
+        <ShowtimeListItem time={show.time} url={show.purchase_url} />
+      </View>
+    ))
     return (
       <View>
-        <ShowtimeListItem />
+        {showtimes}
       </View>
     );
   }
