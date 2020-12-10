@@ -21,7 +21,6 @@ class CinemaDetails extends React.Component {
   }
 
   render() {
-    console.log(this.props.currentCinema);
     const { currentCinema } = this.props;
     const {
       name,
