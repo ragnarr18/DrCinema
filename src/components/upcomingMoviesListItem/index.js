@@ -1,15 +1,28 @@
 import React from 'react';
 import {
-  Text, View, Button, Image,
+  Text, View, Button, Image, StyleSheet,
 } from 'react-native';
+import { WebView } from 'react-native-webview';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
+
+
+const stylesA = StyleSheet.create({
+
+WebViewContainer: {
+
+    marginTop: (Platform.OS == 'android') ? 20 : 0,
+
+  }
+
+});
 
 class UpcomingMoviesListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
 
   render() {
     const { item } = this.props;
@@ -25,6 +38,18 @@ class UpcomingMoviesListItem extends React.Component {
     return (
       <View style={styles.movieContainer}>
         {poster}
+
+        <View style={{ height: 300 }}>
+
+          <WebView
+            style={stylesA.WebViewContainer}
+            allowsFullscreenVideo
+            javaScriptEnabled
+            domStorageEnabled
+            source={{ uri: 'https://www.youtube.com/embed/f_FzLs92YFc?rel=0' }}
+          />
+
+        </View>
         <View style={styles.textBox}>
           <Text style={styles.title}>{item.title}</Text>
           <Text>{releaseDate}</Text>
