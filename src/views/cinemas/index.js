@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import CinemaList from '../../components/cinemaList';
 
 import { changePage } from '../../actions/changePage';
+import { withNavigation } from 'react-navigation';
 import { getCinemas } from '../../actions/cinemasActions';
 import { getMovies } from '../../actions/moviesActions';
 import { navigationRedux } from '../../actions/navigationRedux';
@@ -56,4 +57,5 @@ const mapStateToProps = ({ cinemas, movies }) => ({ cinemas, movies });
 export default connect(mapStateToProps, {
   changePage, getCinemas, getMovies, navigationRedux,
 })(Cinemas);
+//})(withNavigation(Cinemas))  arnar hér
 // here we are dispatching getCinemas and changePage

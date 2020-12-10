@@ -22,13 +22,10 @@ class CinemaList extends React.Component {
             <View>
               <CinemaListItem
                 item={cinema}
-                navigation={this.props.navigation}
+                navigation={this.props.navigation} // withNavigation  i staðinn í child
               />
             </View>
           ))}
-        {/* <CinemaListItem
-          navigate={navigation.navigate}
-        /> */}
         </ScrollView>
       </View>
     );
