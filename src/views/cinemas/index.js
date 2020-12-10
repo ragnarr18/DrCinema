@@ -35,7 +35,7 @@ class Cinemas extends React.Component {
         />
         <View>
           <Text style={styles.title}>CINEMA LIST</Text>
-          <Text style={styles.description}>Click on a cinema to learn more about it.</Text>
+          <Text style={styles.description}>Click on a cinema to learn more about it and see movies they are showing.</Text>
         </View>
         <CinemaList />
       </View>
