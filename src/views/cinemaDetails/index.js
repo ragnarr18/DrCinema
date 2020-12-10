@@ -29,10 +29,10 @@ class CinemaDetails extends React.Component {
       website,
     } = currentCinema;
     const address = currentCinema['address\t'];
-    const html = `<p>${description}</p>`;
-    // if (description === `<p>null</p>`) {
-    //   html = 'No description available'
-    // }
+    let html = 'no description available';
+    if (description) {
+      html = `<p>${description}</p>`;
+    }
 
     return (
       <ScrollView contentContainer={{ flex: 1, flexGrow: 1 }}>
@@ -40,33 +40,40 @@ class CinemaDetails extends React.Component {
           <Text style={styles.title}>
             {name}
           </Text>
+
           <HtmlText html={html} style={styles.description} />
+
           <View style={styles.textWrap}>
             <Icon name="home" size={30} style={styles.icon} />
-            <Text>
+            <Text style={styles.justifyText}>
               {'Address: '}
               {address}
               {', '}
               {city}
             </Text>
           </View>
+
           <View style={styles.textWrap}>
             <Icon name="phone" size={30} style={styles.icon} />
-            <Text>
+            <Text style={styles.justifyText}>
               {'Phone: '}
               {phone}
             </Text>
           </View>
+
           <View style={styles.textWrap}>
             <Icon name="link" size={30} style={styles.icon} />
-            <Text>
+            <Text style={styles.justifyText}>
               {'Website: '}
               {website}
             </Text>
           </View>
+
         </View>
+
         <Text style={styles.showingMovies}>Movies now showing</Text>
         <MovieList />
+
       </ScrollView>
     );
   }

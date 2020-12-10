@@ -25,9 +25,8 @@ export default StyleSheet.create({
   textWrap: {
     flex: 1,
     flexDirection: 'row',
-    // flexWrap: 'wrap',
     marginBottom: 5,
-    marginTop: 10,
+    // marginTop: 5,
     justifyContent: 'flex-start',
   },
   icon: {
@@ -38,5 +37,9 @@ export default StyleSheet.create({
     alignSelf: 'center',
     fontSize: 20,
     textDecorationLine: 'underline',
+  },
+  justifyText: {
+    paddingTop: 7,
+    paddingLeft: 5,
   }
 });
