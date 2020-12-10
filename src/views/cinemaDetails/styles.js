@@ -48,5 +48,5 @@ export default StyleSheet.create({
     color: colors.platinum,
     paddingTop: 7,
     paddingLeft: 5,
-  }
+  },
 });

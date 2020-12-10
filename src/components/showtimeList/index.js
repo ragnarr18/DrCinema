@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  View, Text, ScrollView, FlatList,
+  View,
 } from 'react-native';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import styles from './styles';
 import ShowtimeListItem from '../showtimeListItem';
 
@@ -14,7 +14,6 @@ class ShowtimeList extends React.Component {
 
   render() {
     const { movie } = this.props;
-    console.log(movie);
     const showtimes = movie.showtimes.map((show) => (
       <View key={show.time}>
         <ShowtimeListItem time={show.time} url={show.purchase_url} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import UpcomingMoviesList from '../../components/upcomingMoviesList';
 import { getUpcomingMovies } from '../../actions/upcomingMoviesActions';
@@ -14,7 +14,7 @@ const stylesA = StyleSheet.create({
 class UpcomingMovies extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isTrailerModalOpen: false };
+    this.state = {};
   }
 
   async componentDidMount() {
@@ -22,10 +22,9 @@ class UpcomingMovies extends React.Component {
     await getUpcomingMovies();
   }
 
-  getTrailer(id) {
+  getTrailer() {
     const { currentUpcomingMovie, navigation } = this.props;
     navigation.navigate('Trailer');
-    this.setState({ isTrailerModalOpen: true });
   }
 
   render() {
@@ -50,13 +49,14 @@ class UpcomingMovies extends React.Component {
                 source={{ uri: 'https://www.youtube.com/embed/f_FzLs92YFc?rel=0' }}
               /> */}
 
-            {/* </View> */}
-          {/* </View> */}
-         {/* </TrailerModal> */}
+        {/* </View> */}
+        {/* </View> */}
+        {/* </TrailerModal> */}
       </View>
     );
   }
 }
 
-const mapStateToProps = ({ upcomingMovies, currentUpcomingMovie }) => ({ upcomingMovies, currentUpcomingMovie });
+const mapStateToProps = ({ upcomingMovies, currentUpcomingMovie }) => (
+  { upcomingMovies, currentUpcomingMovie });
 export default connect(mapStateToProps, { getUpcomingMovies })(UpcomingMovies);

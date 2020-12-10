@@ -80,6 +80,18 @@ class CinemaDetails extends React.Component {
   }
 }
 
+CinemaDetails.propTypes = {
+  currentCinema: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    phone: PropTypes.string,
+    city: PropTypes.string,
+    website: PropTypes.string,
+  }).isRequired,
+  getMoviesByCinemaId: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = (
   { movies, currentCinema, moviesByCinemaId },
 ) => ({ movies, currentCinema, moviesByCinemaId });

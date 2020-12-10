@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import { currentMovie } from '../../actions/currentMovieAction';
 
@@ -47,5 +48,17 @@ class MovieListItem extends React.Component {
     );
   }
 }
+
+MovieListItem.propTypes = {
+  item: PropTypes.shape({
+    poster: PropTypes.string,
+    title: PropTypes.string,
+    year: PropTypes.string,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+  currentMovie: PropTypes.func.isRequired,
+};
 
 export default connect(null, { currentMovie })(withNavigation(MovieListItem));

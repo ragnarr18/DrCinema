@@ -11,5 +11,5 @@ export default StyleSheet.create({
     flex: 1,
     paddingTop: 10,
     alignItems: 'center',
-  }
+  },
 });
