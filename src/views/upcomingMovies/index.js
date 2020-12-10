@@ -17,7 +17,7 @@ class UpcomingMovies extends React.Component {
   }
 
   async componentDidMount() {
-    // const { getUpcomingMovies } = this.props;
+    const { getUpcomingMovies } = this.props;
     await getUpcomingMovies();
   }
 
