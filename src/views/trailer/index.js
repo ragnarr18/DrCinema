@@ -1,20 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {
+  View, Text, StyleSheet, ImageBackground,
+} from 'react-native';
 import { connect } from 'react-redux';
 import { WebView } from 'react-native-webview';
-import UpcomingMoviesList from '../../components/upcomingMoviesList';
 import { getUpcomingMovies } from '../../actions/upcomingMoviesActions';
-import TrailerModal from '../../modals/trailerModal';
-
-const stylesA = StyleSheet.create({
-
-  WebViewContainer: {
-
-    marginTop: (Platform.OS === 'android') ? 20 : 0,
-
-  },
-
-});
+import styles from './styles';
 
 class Trailer extends React.Component {
   constructor(props) {
@@ -34,21 +25,32 @@ class Trailer extends React.Component {
   }
 
   render() {
-    // const { isTrailerModalOpen } = this.state;
-    console.log("trailer", this.props.currentUpcomingMovie.trailers[0]['results'][0]['url']);
+    const { currentUpcomingMovie } = this.props;
+    const { plot } = currentUpcomingMovie;
+    const releaseDate = currentUpcomingMovie['release-dateIS']
+    console.log('trailer', this.props.currentUpcomingMovie);
     return (
-        <View style={{ justifyContent: 'center', flex: 1, padding: 5}}>
-          {/* <Text>{this.props.currentUpcomingMovie.trailers[0]['results'][0]['url']}</Text> */}
-          <Text>{this.props.currentUpcomingMovie['title']}</Text>
-          <WebView
-            style={stylesA.WebViewContainer}
-            allowsFullscreenVideo
-            javaScriptEnabled
-            scalesPageToFit
-            domStorageEnabled
-            source={{ uri: this.props.currentUpcomingMovie.trailers[0]['results'][0]['url'] }}
-          />
+      <View style={{flex: 1}}>
+        <View style={styles.textBox}>
+          <Text style={styles.title}>{currentUpcomingMovie.title}</Text>
+          <Text>{releaseDate}</Text>
+          <Text>{plot}</Text>
         </View>
+      <View style={styles.container}>
+
+        {/* <ImageBackground source={{ uri: this.props.currentUpcomingMovie.poster }} style={styles.backgroundImage} /> */}
+        {/* <Text>{this.props.currentUpcomingMovie.trailers[0]['results'][0]['url']}</Text> */}
+        {/* <Text>{this.props.currentUpcomingMovie.title}</Text> */}
+        <WebView
+          style={styles.WebViewContainer}
+          allowsFullscreenVideo
+          javaScriptEnabled
+          scalesPageToFit
+          domStorageEnabled
+          source={{ uri: this.props.currentUpcomingMovie.trailers[0].results[0].url }}
+        />
+      </View>
+      </View>
     );
   }
 }
