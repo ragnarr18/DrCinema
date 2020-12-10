@@ -22,7 +22,6 @@ class CinemaList extends React.Component {
             <View key={cinema.name}>
               <CinemaListItem
                 item={cinema}
-                navigation={this.props.navigation} // withNavigation  i staðinn í child
               />
             </View>
           ))}

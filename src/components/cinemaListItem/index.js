@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, Button, TouchableOpacity, TouchableHighlight,
+  View, Text, TouchableOpacity,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
