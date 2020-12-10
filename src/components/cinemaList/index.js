@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import CinemaListItem from '../cinemaListItem';
-import styles from './styles';
 
 class CinemaList extends React.Component {
   constructor(props) {

@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation';
+import PropTypes from 'prop-types';
 import CinemaList from '../../components/cinemaList';
 
-import { withNavigation } from 'react-navigation';
 import { getCinemas } from '../../actions/cinemasActions';
 import { getMovies } from '../../actions/moviesActions';
 import styles from './styles';
@@ -20,7 +21,6 @@ class Cinemas extends React.Component {
     // console.log('movies', this.props.movies);
     // console.log('parent; ', this.props.cinemas);
   }
-
 
   render() {
     const { navigation } = this.props;
@@ -44,6 +44,14 @@ class Cinemas extends React.Component {
   }
 }
 const mapStateToProps = ({ cinemas, movies }) => ({ cinemas, movies });
+
+Cinemas.propTypes = {
+  getCinemas: PropTypes.func.isRequired,
+  getMovies: PropTypes.func.isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default connect(mapStateToProps, {
   getCinemas, getMovies,
