@@ -5,7 +5,7 @@ const { height: winHeight } = Dimensions.get('window');
 
 export default StyleSheet.create({
   image: {
-    height: 300,
+    height: 500,
     width: 300,
     justifyContent: 'center',
     alignItems: 'center',
