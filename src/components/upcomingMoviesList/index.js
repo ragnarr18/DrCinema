@@ -11,6 +11,7 @@ class UpcomingMoviesList extends React.Component {
 
   render() {
     // const padding = this.props.upcomingMovies.length;
+    const { openTrailer } = this.props;
     return (
       <View>
         <ScrollView
@@ -18,7 +19,7 @@ class UpcomingMoviesList extends React.Component {
         >
           {this.props.upcomingMovies.map((movie) => (
             <View>
-              <UpcomingMoviesListItem item={movie} />
+              <UpcomingMoviesListItem item={movie} openTrailer={openTrailer} />
             </View>
           ))}
         </ScrollView>
