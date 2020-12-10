@@ -5,6 +5,7 @@ import movies from './moviesReducer';
 import upcomingMovies from './upcomingMoviesReducer';
 import moviesByCinemaId from './moviesByCinemaIdReducer';
 import currentMovie from './currentMovieReducer';
+import currentUpcomingMovie from './currentUpcomingMovieReducer';
 // import nav from './nav';
 
 export default combineReducers({
@@ -14,5 +15,6 @@ export default combineReducers({
   upcomingMovies,
   moviesByCinemaId,
   currentMovie,
+  currentUpcomingMovie,
   // nav,
 });
