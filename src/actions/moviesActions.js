@@ -28,7 +28,7 @@ function getMoviesSuccess(currentMovies) {
 export const getMoviesByCinemaId = (id) => async (dispatch) => {
   try {
     // const cinemas = await movieServices.getMovies();
-    console.log('action: ', id);
+    // console.log('action: ', id);
     // console.log(cinemas[0]);
     dispatch(getMoviesByCinemaIdSuccess(id));
   } catch (e) {

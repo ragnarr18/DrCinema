@@ -3,33 +3,24 @@ import { View, Text, Button } from 'react-native';
 import { connect } from 'react-redux';
 import CinemaList from '../../components/cinemaList';
 
-import { changePage } from '../../actions/changePage';
 import { withNavigation } from 'react-navigation';
 import { getCinemas } from '../../actions/cinemasActions';
 import { getMovies } from '../../actions/moviesActions';
-import { navigationRedux } from '../../actions/navigationRedux';
 import styles from './styles';
 
 class Cinemas extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    const { navigationRedux } = this.props;
-    const { navigation } = this.props;
-    navigationRedux(navigation);
   }
 
   async componentDidMount() {
     await this.props.getCinemas();
     await this.props.getMovies();
-    console.log('movies', this.props.movies);
+    // console.log('movies', this.props.movies);
     // console.log('parent; ', this.props.cinemas);
   }
 
-  selectPage(number) {
-    // console.log(number);
-    this.props.changePage(number);
-  }
 
   render() {
     const { navigation } = this.props;
@@ -55,7 +46,7 @@ class Cinemas extends React.Component {
 const mapStateToProps = ({ cinemas, movies }) => ({ cinemas, movies });
 
 export default connect(mapStateToProps, {
-  changePage, getCinemas, getMovies, navigationRedux,
-})(Cinemas);
-//})(withNavigation(Cinemas))  arnar hér
+  getCinemas, getMovies,
+})(withNavigation(Cinemas));
+// })(withNavigation(Cinemas))  arnar hér
 // here we are dispatching getCinemas and changePage
