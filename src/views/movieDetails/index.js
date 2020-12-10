@@ -41,7 +41,14 @@ class MovieDetails extends React.Component {
             <Text style={styles.genre}>
               Genres:
               {' '}
-              TO-DO
+              {movie.genres.map((genre) => (
+                // sko ég er að íhuga ef við höfum tíma að búa til filter sem fer í gegnum alls konar case í json svarinu frá servernum, cuz skoppa og skrítla genre-in eru tölur
+                <Text>
+                  {' '}
+                  {genre.Name}
+                  ,
+                </Text>
+              ))}
             </Text>
           </View>
           <Text style={styles.title}>Sýningatímar</Text>
