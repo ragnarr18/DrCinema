@@ -52,15 +52,15 @@ class Trailer extends React.Component {
         <View style={styles.movieAndDescriptionContainer}>
           <View style={styles.movieContainer}>
             {poster}
-            <View style={styles.textBox}>
-              <Text style={styles.title}>{currentUpcomingMovie.title}</Text>
-              <Text>Útgáfudagur:</Text>
-              <Text style={styles.text}>{releaseDate}</Text>
-            </View>
           </View>
-          <View style={{ flex: 1 }}>
-            <Text style={styles.text}>{plot}</Text>
+          <View style={styles.textBox}>
+            <Text style={styles.title}>{currentUpcomingMovie.title}</Text>
+            <Text>Útgáfudagur:</Text>
+            <Text style={styles.text}>{releaseDate}</Text>
           </View>
+        </View>
+        <View style={styles.movieAndDescriptionContainer}>
+          <Text style={styles.text}>{plot}</Text>
         </View>
         <View style={styles.container}>
           {trailer !== undefined > 0 && (
