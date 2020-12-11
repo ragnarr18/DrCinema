@@ -4,6 +4,8 @@ import { colors } from '../../styles';
 export default StyleSheet.create({
   background: {
     backgroundColor: colors.pacificBlue,
+    borderWidth: 3,
+    borderColor: colors.blueSaphire,
   },
   itemContainer: {
     margin: 10,

@@ -26,4 +26,9 @@ export default StyleSheet.create({
   header: {
     borderBottomWidth: 1,
   },
+  button: {
+    borderTopWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: colors.cgBlue,
+  },
 });

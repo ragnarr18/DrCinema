@@ -11,6 +11,8 @@ export default StyleSheet.create({
     margin: 10,
     padding: 5,
     backgroundColor: colors.cgBlue,
+    borderWidth: 3,
+    borderColor: 'gray',
   },
   description: {
     color: colors.platinum,

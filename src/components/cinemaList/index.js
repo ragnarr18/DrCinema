@@ -11,7 +11,7 @@ class CinemaList extends React.Component {
   }
 
   render() {
-    const height = this.props.cinemas.length * 110;
+    const height = this.props.cinemas.length * 115;
     return (
       <View style={styles.background}>
         <ScrollView

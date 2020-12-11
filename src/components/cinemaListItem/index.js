@@ -24,7 +24,7 @@ class CinemaListItem extends React.Component {
     const { item } = this.props;
     let { website } = item;
     if (website.substr(0, 3) !== 'www') { website = `www.${website}`; }
-    
+
     return (
       <View style={[styles.itemContainer, styles.background]}>
         <TouchableOpacity

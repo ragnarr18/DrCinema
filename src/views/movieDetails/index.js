@@ -59,7 +59,7 @@ class MovieDetails extends React.Component {
               ))}
             </Text>
           </View>
-          <Text style={styles.title}>Showtimes</Text>
+          <Text style={styles.lowerTitle}>Showtimes</Text>
           <Text style={styles.subtitle}>Click on a button to buy a ticket for the show!</Text>
           <ShowtimeList movie={movie} />
         </ScrollView>
