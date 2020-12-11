@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 import { colors } from '../../styles';
 
 const windowWidth = Dimensions.get('window').width;
@@ -8,19 +8,25 @@ export default StyleSheet.create({
   description: {
     textAlign: 'center',
     padding: 5,
-
   },
   header: {
     borderBottomWidth: 1,
   },
   container: {
-    flex: 1,
+    flex: 1.4,
     backgroundColor: colors.pacificBlue,
+    // marginBottom: 10,
+    // width: windowWidth - 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
   },
   WebViewContainer: {
-    marginTop: (Platform.OS === 'android') ? 20 : 0,
+    // marginTop: (Platform.OS === 'android') ? 20 : 0,
     opacity: 0.99,
     backgroundColor: colors.pacificBlue,
+    width: windowWidth - 50,
+    height: 200,
   },
   movieAndDescriptionContainer: {
     flex: 2,
@@ -31,11 +37,11 @@ export default StyleSheet.create({
     backgroundColor: colors.pacificBlue,
   },
   movieContainer: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'row',
     // flexGrow: 1,
     // margin: 10,
-    padding: 5,
+    padding: 10,
     backgroundColor: colors.pacificBlue,
   },
   icon: {
@@ -45,17 +51,18 @@ export default StyleSheet.create({
     paddingLeft: 25,
   },
   image: {
-    flex: 3,
-    alignContent: 'center',
-    paddingBottom: 30,
-    marginBottom: 30,
-    // height: 300,
-    // width: 300,
+    // flex: 1,
+    // alignContent: 'flex-start',
+    // paddingBottom: 30,
+    // marginBottom: 30,
+    height: 200,
+    width: 150,
   },
   textBox: {
     flex: 4,
     marginLeft: 10,
-     paddingLeft: 10,
+    paddingLeft: 10,
+    marginTop: 10,
   },
   title: {
     color: colors.platinum,
@@ -65,6 +72,7 @@ export default StyleSheet.create({
   text: {
     color: colors.platinum,
     padding: 5,
-    margin: 5
+    fontStyle: 'italic',
+    fontSize: 14,
   },
 });

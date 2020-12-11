@@ -58,7 +58,7 @@ class Trailer extends React.Component {
               <Text style={styles.text}>{releaseDate}</Text>
             </View>
           </View>
-          <View>
+          <View style={{ flex: 1 }}>
             <Text style={styles.text}>{plot}</Text>
           </View>
         </View>
@@ -73,10 +73,8 @@ class Trailer extends React.Component {
             domStorageEnabled
             source={{ uri: trailer }}
           />
-
           )}
         </View>
-
       </View>
     );
   }
