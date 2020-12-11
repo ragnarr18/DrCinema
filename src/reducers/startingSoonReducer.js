@@ -1,5 +1,7 @@
 import * as constants from '../constants';
 
+const numberOfFilms = 5;
+
 function getIndexOfOldest(list) {
   // finds the latest date and returns it's index
   let oldest = list[0];
@@ -29,7 +31,7 @@ function getNextMovies(movies) {
         t = t.replace('.', ':');
         if (latest === '') { latest = t; }
 
-        if (next.length < 10) {
+        if (next.length < numberOfFilms) {
           if (title && loc && t) {
             next.push({ title, loc, t, purchase_url });
             if (t > latest && t > d) { latest = t; }

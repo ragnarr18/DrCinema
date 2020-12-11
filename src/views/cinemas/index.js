@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
@@ -30,7 +30,7 @@ class Cinemas extends React.Component {
   render() {
     const { navigation } = this.props;
     return (
-      <View style={styles.background}>
+      <ScrollView style={styles.background}>
         <View style={styles.button}>
           <Button
             color={colors.pacificBlue}
@@ -39,6 +39,8 @@ class Cinemas extends React.Component {
           />
         </View>
         <View>
+          <Text style={styles.title}>STARTING SOON</Text>
+          <Text style={styles.description}>click on a film to purchase a ticket</Text>
           <StartingSoonList />
         </View>
         <View>
@@ -48,7 +50,7 @@ class Cinemas extends React.Component {
           </Text>
         </View>
         <CinemaList />
-      </View>
+      </ScrollView>
     );
   }
 }

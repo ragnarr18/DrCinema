@@ -14,7 +14,7 @@ class CinemaList extends React.Component {
     const height = this.props.cinemas.length * 115;
     return (
       <View style={styles.background}>
-        <ScrollView
+        <View
           contentContainerStyle={{ height }}
         >
           {this.props.cinemas.map((cinema) => (
@@ -24,7 +24,7 @@ class CinemaList extends React.Component {
               />
             </View>
           ))}
-        </ScrollView>
+        </View>
       </View>
     );
   }
