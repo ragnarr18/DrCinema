@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, Image,
+  View, Text, Image
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
@@ -35,6 +35,8 @@ class Trailer extends React.Component {
     const { currentUpcomingMovie } = this.props;
     const { plot } = currentUpcomingMovie;
     const releaseDate = currentUpcomingMovie['release-dateIS'];
+    const d = new Date(releaseDate).toGMTString();
+    const date = d.substr(0, d.indexOf('00:00'));
     console.log('trailer', this.props.currentUpcomingMovie);
     console.log('size of array: ', this.props.currentUpcomingMovie.trailers.length);
     const trailer = this.getTrailer();
@@ -55,8 +57,8 @@ class Trailer extends React.Component {
           </View>
           <View style={styles.textBox}>
             <Text style={styles.title}>{currentUpcomingMovie.title}</Text>
-            <Text>Útgáfudagur:</Text>
-            <Text style={styles.text}>{releaseDate}</Text>
+            <Text style={styles.text2}>Útgáfudagur:</Text>
+            <Text style={styles.text}>{date}</Text>
           </View>
         </View>
         <View style={styles.movieAndDescriptionContainer}>

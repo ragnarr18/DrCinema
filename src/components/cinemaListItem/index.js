@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, TouchableOpacity,
+  View, Text, TouchableOpacity, Image,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
@@ -23,6 +23,7 @@ class CinemaListItem extends React.Component {
   render() {
     const { item } = this.props;
     let { website } = item;
+    const { logo } = item;
     if (website.substr(0, 3) !== 'www') { website = `www.${website}`; }
 
     return (
@@ -30,10 +31,17 @@ class CinemaListItem extends React.Component {
         <TouchableOpacity
           onPress={() => this.inspectCinema(item)}
         >
-          <Text style={styles.cinemaTitle}>{item.name}</Text>
-          <Text style={styles.subtitle}>
-            {website}
-          </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <View style={styles.textView}>
+              <Text style={styles.cinemaTitle}>{item.name}</Text>
+              <Text style={styles.subtitle}>
+                {website}
+              </Text>
+            </View>
+            <View style={styles.logoView}>
+              <Image style={{ height: 30, width: 120 }} source={{ uri: logo }} resizeMode="contain" />
+            </View>
+          </View>
         </TouchableOpacity>
       </View>
     );
@@ -44,6 +52,7 @@ CinemaListItem.propTypes = {
   item: PropTypes.shape({
     name: PropTypes.string,
     website: PropTypes.string,
+    logo: PropTypes.string,
   }).isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,

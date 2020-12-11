@@ -67,6 +67,8 @@ export default StyleSheet.create({
     marginLeft: 10,
     paddingLeft: 10,
     marginTop: 10,
+    paddingBottom: 10,
+    textAlign: 'center',
   },
   title: {
     color: colors.platinum,
@@ -77,6 +79,10 @@ export default StyleSheet.create({
     color: colors.platinum,
     padding: 5,
     fontStyle: 'italic',
+    fontSize: 13,
+  },
+  text2: {
+    color: colors.platinum,
     fontSize: 14,
   },
 });
