@@ -27,10 +27,12 @@ class Cinemas extends React.Component {
 
   async componentDidMount() {
     const {
-      getCinemas, getMovies, startingSoon, movies,
+      getCinemas, getMovies, startingSoon,
     } = this.props;
     await getCinemas();
     await getMovies();
+
+    const { movies } = this.props;
     await startingSoon(movies);
   }
 
@@ -38,12 +40,16 @@ class Cinemas extends React.Component {
     const { navigation } = this.props;
     return (
       <ScrollView style={styles.background}>
+        <View style={{ flex: 1, backgroundColor: colors.pacificBlue }}>
+          <Text style={styles.drCinema}>Dr.Cinema</Text>
+        </View>
+        <Text style={styles.title}>COMING SOON</Text>
+        <Text style={styles.description}>Press here to see all upcoming movies</Text>
         <View style={styles.button}>
           <TouchableOpacity
             onPress={() => navigation.navigate('UpcomingMovies')}
-            style={{ color: colors.pacificBlue, flex: 1 }}
           >
-            <View style={{ flex: 1, backgroundColor: colors.pacificBlue, alignItems: 'center' }}>
+            <View style={styles.comingSoonImage}>
               <Image
                 style={{ width: 200, height: 70 }}
                 source={{ uri: 'https://www.a-dato.com/wp-content/uploads/2018/11/Coming-soon.png' }}

@@ -5,6 +5,18 @@ export default StyleSheet.create({
   background: {
     backgroundColor: colors.platinum,
   },
+  drCinema: {
+    fontSize: 50,
+    fontWeight: 'bold',
+    color: colors.platinum,
+    alignSelf: 'center',
+    textDecorationLine: 'underline',
+    paddingBottom: 10,
+  },
+  drCinemaBackground: {
+    flex: 1,
+    backgroundColor: colors.pacificBlue,
+  },
   title: {
     color: colors.blueSaphire,
     textAlign: 'center',
@@ -27,9 +39,16 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
   },
   button: {
-    borderTopWidth: 3,
-    borderBottomWidth: 3,
+    borderWidth: 3,
     borderColor: colors.cgBlue,
-    height: 75,
+    height: 80,
+    width: 300,
+    alignSelf: 'center',
+    borderRadius: 20,
+    backgroundColor: colors.pacificBlue,
+    marginBottom: 10,
   },
+  comingSoonImage: {
+    alignItems: 'center'
+  }
 });
