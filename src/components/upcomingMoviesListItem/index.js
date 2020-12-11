@@ -15,13 +15,13 @@ class UpcomingMoviesListItem extends React.Component {
     this.state = {};
   }
 
-  async setCurrentUpcomingMovie(status) {
-    if (status) {
+  async setCurrentUpcomingMovie() {
+    // if (status) {
       const { item, openTrailer } = this.props;
       await this.props.getCurrentUpcomingMovie(item);
       // console.log("child props: ", this.props);
       openTrailer();
-    }
+    // }
   }
 
   render() {
@@ -42,7 +42,7 @@ class UpcomingMoviesListItem extends React.Component {
       trailerAvailable = true;
     }
     return (
-      <TouchableOpacity onPress={() => this.setCurrentUpcomingMovie(trailerAvailable)}>
+      <TouchableOpacity onPress={() => this.setCurrentUpcomingMovie()}>
         <View style={styles.movieContainer}>
           {poster}
           <View style={styles.textBox}>
