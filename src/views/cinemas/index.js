@@ -39,11 +39,13 @@ class Cinemas extends React.Component {
           /> */}
           <TouchableOpacity
             onPress={() => navigation.navigate('UpcomingMovies')}
-            style={{color: colors.pacificBlue, flex: 1}}
+            style={{ color: colors.pacificBlue, flex: 1 }}
           >
-            <View style={{flex: 1, backgroundColor: colors.pacificBlue, alignItems: 'center'}}>
-              <Image style={{width: 200 , height: 50}}
-                source={{uri: 'https://www.a-dato.com/wp-content/uploads/2018/11/Coming-soon.png'}}></Image>
+            <View style={{ flex: 1, backgroundColor: colors.pacificBlue, alignItems: 'center' }}>
+              <Image
+                style={{ width: 200, height: 50 }}
+                source={{ uri: 'https://www.a-dato.com/wp-content/uploads/2018/11/Coming-soon.png' }}
+              />
             </View>
           </TouchableOpacity>
         </View>
