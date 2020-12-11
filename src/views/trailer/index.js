@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  View, Text, StyleSheet, ImageBackground,
+  View, Text, Image,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
 import { WebView } from 'react-native-webview';
 import { getUpcomingMovies } from '../../actions/upcomingMoviesActions';
@@ -20,30 +21,60 @@ class Trailer extends React.Component {
 
   getTrailer() {
     const { currentUpcomingMovie } = this.props;
+    if (currentUpcomingMovie.trailers.length > 0) {
+      if (currentUpcomingMovie.trailers[0].results.length > 0) {
+        if (currentUpcomingMovie.trailers[0].results[0].url !== undefined) {
+          return currentUpcomingMovie.trailers[0].results[0].url;
+        }
+      }
+    }
+    return undefined;
   }
 
   render() {
     const { currentUpcomingMovie } = this.props;
     const { plot } = currentUpcomingMovie;
-    const releaseDate = currentUpcomingMovie['release-dateIS']
+    const releaseDate = currentUpcomingMovie['release-dateIS'];
     console.log('trailer', this.props.currentUpcomingMovie);
-    return (
-      <View style={{flex: 1}}>
-        <View style={styles.textBox}>
-          <Text style={styles.title}>{currentUpcomingMovie.title}</Text>
-          <Text>{releaseDate}</Text>
-          <Text>{plot}</Text>
+    console.log('size of array: ', this.props.currentUpcomingMovie.trailers.length);
+    const trailer = this.getTrailer();
+
+    let poster = <Image style={styles.image} source={{ uri: currentUpcomingMovie.poster }} resizeMode="contain" />;
+    if (currentUpcomingMovie.poster === 'https://kvikmyndir.is/images/poster/') {
+      poster = (
+        <View style={styles.icon}>
+          <Icon size={50} name="file-image-o" />
         </View>
-      <View style={styles.container}>
-        <WebView
-          style={styles.WebViewContainer}
-          allowsFullscreenVideo
-          javaScriptEnabled
-          scalesPageToFit
-          domStorageEnabled
-          source={{ uri: this.props.currentUpcomingMovie.trailers[0].results[0].url }}
-        />
-      </View>
+      );
+    }
+    return (
+      <View style={{ flex: 1 }}>
+        <View style={styles.movieAndDescriptionContainer}>
+          <View style={styles.movieContainer}>
+            {poster}
+          </View>
+          <View style={styles.textBox}>
+            <Text style={styles.title}>{currentUpcomingMovie.title}</Text>
+            <Text>Útgáfudagur:</Text>
+            <Text style={styles.text}>{releaseDate}</Text>
+          </View>
+        </View>
+        <View style={styles.movieAndDescriptionContainer}>
+          <Text style={styles.text}>{plot}</Text>
+        </View>
+        <View style={styles.container}>
+          {trailer !== undefined > 0 && (
+          // <View style={styles.container}>
+          <WebView
+            style={styles.WebViewContainer}
+            allowsFullscreenVideo
+            javaScriptEnabled
+            scalesPageToFit
+            domStorageEnabled
+            source={{ uri: trailer }}
+          />
+          )}
+        </View>
       </View>
     );
   }

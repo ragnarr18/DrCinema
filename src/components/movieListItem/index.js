@@ -37,11 +37,13 @@ class MovieListItem extends React.Component {
             // sko ég er að íhuga ef við höfum tíma að búa til filter
             // sem fer í gegnum alls konar case í json svarinu frá servernum,
             // cuz skoppa og skrítla genre-in eru tölur
-            <Text key={genre.ID} style={[styles.text, { fontSize: 10 }]}>
-              {' '}
-              {genre.Name}
-              {' '}
-            </Text>
+            <View style={styles.genres}>
+              <Text key={genre.ID} style={[styles.text, { fontSize: 10 }]}>
+                {' '}
+                {genre.Name}
+                {' '}
+              </Text>
+            </View>
           ))}
         </View>
       </TouchableOpacity>

@@ -30,11 +30,13 @@ class Cinemas extends React.Component {
     const { navigation } = this.props;
     return (
       <View style={styles.background}>
-        <Button
-          color={colors.pacificBlue}
-          title="upcoming movies"
-          onPress={() => navigation.navigate('UpcomingMovies')}
-        />
+        <View style={styles.button}>
+          <Button
+            color={colors.pacificBlue}
+            title="upcoming movies"
+            onPress={() => navigation.navigate('UpcomingMovies')}
+          />
+        </View>
         <View>
           <Text style={styles.title}>CINEMA LIST</Text>
           <Text style={styles.description}>
