@@ -4,7 +4,7 @@ import * as constants from '../constants';
 const ENDPOINT = 'http://api.kvikmyndir.is/';
 const notSambio = [['Smárabíó', 'https://yc.cldmlk.com/002/1550069358167_smarabio-svart-logo.png'], ['Háskólabíó', 'https://yc.cldmlk.com/0000000003/1549487219303_sitelogo_sub1.png'], ['Borgarbíó', 'https://yc.cldmlk.com/0000000004/1557792762258_borg.png'],
   ['LaugarásBíó', 'https://kvikmyndir.is/wp-content/themes/kvikmyndir/images/logo_laugarasbio.png'], ['Bíó Paradís', 'https://nordichouse.is/wp-content/uploads/2018/02/facebook-share.png']];
-const sambio = 'https://www.sambio.is/img/footerlogo.gif';
+const sambio = 'https://sambio.blob.core.windows.net/files/sambio.png';
 function setLogo(data) {
   console.log('this is the data: ', data);
   for (let y = 0; y < data.length; y++) {
