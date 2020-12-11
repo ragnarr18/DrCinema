@@ -7,6 +7,8 @@ export default StyleSheet.create({
     margin: 7,
     padding: 5,
     backgroundColor: colors.pacificBlue,
+    borderWidth: 3,
+    borderColor: colors.cgBlue,
   },
   icon: {
     height: 100,
