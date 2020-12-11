@@ -6,6 +6,7 @@ import upcomingMovies from './upcomingMoviesReducer';
 import moviesByCinemaId from './moviesByCinemaIdReducer';
 import currentMovie from './currentMovieReducer';
 import currentUpcomingMovie from './currentUpcomingMovieReducer';
+import startingSoon from './startingSoonReducer';
 // import nav from './nav';
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
   moviesByCinemaId,
   currentMovie,
   currentUpcomingMovie,
+  startingSoon,
   // nav,
 });

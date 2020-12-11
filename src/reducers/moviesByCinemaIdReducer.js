@@ -44,7 +44,7 @@ export default function (state = [], action) {
   // console.log('payload', action.payload);
   switch (action.type) {
     case constants.GET_MOVIES_BY_CINEMA_ID:
-    return getMoviesByCinemaId(action.payload.movies, action.payload.id);
+      return getMoviesByCinemaId(action.payload.movies, action.payload.id);
       // return {
       //   moviesByCinemaId: getMoviesByCinemaId(action.payload.movies, action.payload.id),
       // };
