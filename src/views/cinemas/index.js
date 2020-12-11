@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, ScrollView } from 'react-native';
+import { View, Text, Button, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
@@ -32,11 +32,20 @@ class Cinemas extends React.Component {
     return (
       <ScrollView style={styles.background}>
         <View style={styles.button}>
-          <Button
+          {/* <Button
             color={colors.pacificBlue}
             title="upcoming movies"
             onPress={() => navigation.navigate('UpcomingMovies')}
-          />
+          /> */}
+          <TouchableOpacity
+            onPress={() => navigation.navigate('UpcomingMovies')}
+            style={{color: colors.pacificBlue, flex: 1}}
+          >
+            <View style={{flex: 1, backgroundColor: colors.pacificBlue, alignItems: 'center'}}>
+              <Image style={{width: 200 , height: 50}}
+                source={{uri: 'https://www.a-dato.com/wp-content/uploads/2018/11/Coming-soon.png'}}></Image>
+            </View>
+          </TouchableOpacity>
         </View>
         <View>
           <Text style={styles.title}>STARTING SOON</Text>
