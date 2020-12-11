@@ -1,8 +1,9 @@
 import React from 'react';
 import {
-  View, Text, Image
+  View, Text, Image,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { WebView } from 'react-native-webview';
 import { getUpcomingMovies } from '../../actions/upcomingMoviesActions';
@@ -37,8 +38,6 @@ class Trailer extends React.Component {
     const releaseDate = currentUpcomingMovie['release-dateIS'];
     const d = new Date(releaseDate).toGMTString();
     const date = d.substr(0, d.indexOf('00:00'));
-    console.log('trailer', this.props.currentUpcomingMovie);
-    console.log('size of array: ', this.props.currentUpcomingMovie.trailers.length);
     const trailer = this.getTrailer();
 
     let poster = <Image style={styles.image} source={{ uri: currentUpcomingMovie.poster }} resizeMode="contain" />;
@@ -81,6 +80,10 @@ class Trailer extends React.Component {
     );
   }
 }
+
+Trailer.propTypes = {
+  getUpcomingMovies: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = ({ currentUpcomingMovie }) => ({ currentUpcomingMovie });
 export default connect(mapStateToProps, { getUpcomingMovies })(Trailer);

@@ -7,7 +7,7 @@ function getIndexOfOldest(list) {
   let oldest = list[0];
   list.forEach((x) => {
     if (x.time > oldest.time) { oldest = x; }
-  })
+  });
   return list.indexOf(oldest);
 }
 
@@ -33,13 +33,17 @@ function getNextMovies(movies) {
 
         if (next.length < numberOfFilms) {
           if (title && loc && t) {
-            next.push({ title, loc, t, purchase_url });
+            next.push({
+              title, loc, t, purchase_url,
+            });
             if (t > latest && t > d) { latest = t; }
           }
         } else if (t < latest) {
           if (title && loc && t) {
             const index = getIndexOfOldest(next);
-            next[index] = { title, loc, t, purchase_url };
+            next[index] = {
+              title, loc, t, purchase_url,
+            };
           }
         }
       }
