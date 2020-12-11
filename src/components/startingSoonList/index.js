@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './styles';
 
@@ -20,9 +21,13 @@ class StartingSoonList extends React.Component {
           </View>
         ))}
       </View>
-    )
+    );
   }
 }
+
+StartingSoonList.propTypes = {
+  startingSoon: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+};
 
 const mapStateToProps = ({ startingSoon }) => ({ startingSoon });
 

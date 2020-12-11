@@ -30,5 +30,6 @@ export default StyleSheet.create({
     borderTopWidth: 3,
     borderBottomWidth: 3,
     borderColor: colors.cgBlue,
+    height: 75,
   },
 });

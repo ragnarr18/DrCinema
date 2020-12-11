@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import CinemaListItem from '../cinemaListItem';
 import styles from './styles';
 
@@ -29,6 +30,12 @@ class CinemaList extends React.Component {
     );
   }
 }
+
+CinemaList.propTypes = {
+  cinemas: PropTypes.arrayOf(PropTypes.shape({
+    length: PropTypes.number,
+  })).isRequired,
+};
 
 const mapStateToProps = ({ cinemas }) => ({ cinemas });
 // pulling cinems from store, same as (stateStore){return {cinemas: stateStore.cinemas}}

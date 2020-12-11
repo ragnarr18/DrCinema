@@ -2,8 +2,6 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { colors } from '../../styles';
 
 const { width: winWidth } = Dimensions.get('window');
-const { width: winHeight } = Dimensions.get('window');
-const widthPadding = 30;
 
 export default StyleSheet.create({
   container: {
@@ -25,5 +23,5 @@ export default StyleSheet.create({
     position: 'absolute',
     right: 10,
     top: 5,
-  }
+  },
 });

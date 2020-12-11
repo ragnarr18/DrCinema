@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View,
 } from 'react-native';
-// import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import ShowtimeListItem from '../showtimeListItem';
 
@@ -18,7 +18,7 @@ class ShowtimeList extends React.Component {
       <View key={show.time}>
         <ShowtimeListItem time={show.time} url={show.purchase_url} />
       </View>
-    ))
+    ));
     return (
       <View style={styles.list}>
         {showtimes}
@@ -26,5 +26,11 @@ class ShowtimeList extends React.Component {
     );
   }
 }
+
+ShowtimeList.propTypes = {
+  movie: PropTypes.shape({
+    showtimes: PropTypes.arrayOf(PropTypes.shape({})),
+  }).isRequired,
+};
 
 export default ShowtimeList;

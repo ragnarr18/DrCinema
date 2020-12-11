@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import UpcomingMoviesListItem from '../upcomingMoviesListItem';
 
 class UpcomingMoviesList extends React.Component {
@@ -10,7 +11,6 @@ class UpcomingMoviesList extends React.Component {
   }
 
   render() {
-    // const padding = this.props.upcomingMovies.length;
     const { openTrailer } = this.props;
     return (
       <View>
@@ -27,6 +27,11 @@ class UpcomingMoviesList extends React.Component {
     );
   }
 }
+
+UpcomingMoviesList.propTypes = {
+  upcomingMovies: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  openTrailer: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = ({ upcomingMovies }) => ({ upcomingMovies });
 

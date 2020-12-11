@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, Button, ScrollView, TouchableOpacity, Image } from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
@@ -39,11 +45,13 @@ class Cinemas extends React.Component {
           /> */}
           <TouchableOpacity
             onPress={() => navigation.navigate('UpcomingMovies')}
-            style={{color: colors.pacificBlue, flex: 1}}
+            style={{ color: colors.pacificBlue, flex: 1 }}
           >
-            <View style={{flex: 1, backgroundColor: colors.pacificBlue, alignItems: 'center'}}>
-              <Image style={{width: 200 , height: 50}}
-                source={{uri: 'https://www.a-dato.com/wp-content/uploads/2018/11/Coming-soon.png'}}></Image>
+            <View style={{ flex: 1, backgroundColor: colors.pacificBlue, alignItems: 'center' }}>
+              <Image
+                style={{ width: 200, height: 70 }}
+                source={{ uri: 'https://www.a-dato.com/wp-content/uploads/2018/11/Coming-soon.png' }}
+              />
             </View>
           </TouchableOpacity>
         </View>
@@ -71,10 +79,10 @@ Cinemas.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
   }).isRequired,
+  startingSoon: PropTypes.func.isRequired,
+  movies: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export default connect(mapStateToProps, {
-  getCinemas, getMovies, startingSoon
+  getCinemas, getMovies, startingSoon,
 })(withNavigation(Cinemas));
-// })(withNavigation(Cinemas))  arnar hér
-// here we are dispatching getCinemas and changePage

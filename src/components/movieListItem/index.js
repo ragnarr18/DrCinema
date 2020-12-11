@@ -56,6 +56,7 @@ MovieListItem.propTypes = {
     poster: PropTypes.string,
     title: PropTypes.string,
     year: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.shape({})),
   }).isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,

@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { WebView } from 'react-native-webview';
-// import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 const stylesA = StyleSheet.create({
