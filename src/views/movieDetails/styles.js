@@ -20,9 +20,18 @@ export default StyleSheet.create({
     backgroundColor: colors.pacificBlue,
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 3,
+    borderColor: colors.cgBlue,
   },
   title: {
     color: colors.platinum,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 24,
+    padding: 5,
+  },
+  lowerTitle: {
+    color: colors.cgBlue,
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 24,
@@ -46,5 +55,7 @@ export default StyleSheet.create({
   },
   text: {
     color: colors.platinum,
-  }
+    padding: 5,
+    fontStyle: 'italic',
+  },
 });

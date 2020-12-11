@@ -4,5 +4,5 @@ import { colors } from '../../styles';
 export default StyleSheet.create({
   background: {
     backgroundColor: colors.platinum,
-  }
+  },
 });
