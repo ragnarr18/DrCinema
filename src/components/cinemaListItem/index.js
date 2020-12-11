@@ -22,6 +22,9 @@ class CinemaListItem extends React.Component {
 
   render() {
     const { item } = this.props;
+    let { website } = item;
+    if (website.substr(0, 3) !== 'www') { website = `www.${website}`; }
+    
     return (
       <View style={[styles.itemContainer, styles.background]}>
         <TouchableOpacity
@@ -29,7 +32,7 @@ class CinemaListItem extends React.Component {
         >
           <Text style={styles.cinemaTitle}>{item.name}</Text>
           <Text style={styles.subtitle}>
-            {item.website}
+            {website}
           </Text>
         </TouchableOpacity>
       </View>
