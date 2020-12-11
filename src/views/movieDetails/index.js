@@ -26,7 +26,6 @@ class MovieDetails extends React.Component {
       />
     );
 
-    console.log(movie);
     return (
       <View style={styles.background}>
         <ScrollView contentContainer={{ flex: 1, flexGrow: 1 }}>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import CinemaList from '../../components/cinemaList';
+import StartingSoonList from '../../components/startingSoonList';
 
 import { getCinemas } from '../../actions/cinemasActions';
 import { getMovies } from '../../actions/moviesActions';
@@ -36,6 +37,9 @@ class Cinemas extends React.Component {
             title="upcoming movies"
             onPress={() => navigation.navigate('UpcomingMovies')}
           />
+        </View>
+        <View>
+          <StartingSoonList />
         </View>
         <View>
           <Text style={styles.title}>CINEMA LIST</Text>
