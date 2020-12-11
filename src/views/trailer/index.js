@@ -55,7 +55,7 @@ class Trailer extends React.Component {
           </View>
           <View style={styles.textBox}>
             <Text style={styles.title}>{currentUpcomingMovie.title}</Text>
-            <Text>Útgáfudagur:</Text>
+            <Text style={styles.text2}>Útgáfudagur:</Text>
             <Text style={styles.text}>{releaseDate}</Text>
           </View>
         </View>
