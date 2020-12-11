@@ -5,6 +5,18 @@ export default StyleSheet.create({
   background: {
     backgroundColor: colors.platinum,
   },
+  drCinema: {
+    fontSize: 50,
+    fontWeight: 'bold',
+    color: colors.platinum,
+    alignSelf: 'center',
+    textDecorationLine: 'underline',
+    paddingBottom: 10,
+  },
+  drCinemaBackground: {
+    flex: 1,
+    backgroundColor: colors.pacificBlue,
+  },
   title: {
     color: colors.blueSaphire,
     textAlign: 'center',

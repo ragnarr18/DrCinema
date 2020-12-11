@@ -27,10 +27,12 @@ class Cinemas extends React.Component {
 
   async componentDidMount() {
     const {
-      getCinemas, getMovies, startingSoon, movies,
+      getCinemas, getMovies, startingSoon,
     } = this.props;
     await getCinemas();
     await getMovies();
+
+    const { movies } = this.props;
     await startingSoon(movies);
   }
 
@@ -39,7 +41,7 @@ class Cinemas extends React.Component {
     return (
       <ScrollView style={styles.background}>
         <View style={{ flex: 1, backgroundColor: colors.pacificBlue }}>
-          <Text style={{ fontSize: 50, fontWeight: 'bold', color: colors.platinum, alignSelf: 'center', textDecorationLine: 'underline', paddingBottom: 10, }}>Dr.Cinema</Text>
+          <Text style={styles.drCinema}>Dr.Cinema</Text>
         </View>
         <Text style={styles.title}>COMING SOON</Text>
         <Text style={styles.description}>Press here to see all upcoming movies</Text>
