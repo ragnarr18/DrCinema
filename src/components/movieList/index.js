@@ -12,7 +12,8 @@ class CinemaList extends React.Component {
   }
 
   render() {
-    const movies = this.props.moviesByCinemaId.map((item) => (
+    const { moviesByCinemaId } = this.props;
+    const movies = moviesByCinemaId.map((item) => (
       <View key={item.title}>
         <MovieListItem item={item} />
       </View>
@@ -38,5 +39,4 @@ CinemaList.propTypes = {
 };
 
 const mapStateToProps = ({ moviesByCinemaId }) => ({ moviesByCinemaId });
-// pulling cinems from store, same as (stateStore){return {cinemas: stateStore.cinemas}}
-export default connect(mapStateToProps)(CinemaList); // returns a connected component
+export default connect(mapStateToProps)(CinemaList);

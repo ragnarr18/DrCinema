@@ -23,6 +23,8 @@
         "no-plusplus" :[2 ,{ "allowForLoopAfterthoughts": true }],
         "no-await-in-loop" : 0,
         "linebreak-style": ["error", "windows"],
-        "no-shadow": 0
+        "no-shadow": 0,
+        "import/prefer-default-export": 0,
+        "func-names": 0
     }
 }

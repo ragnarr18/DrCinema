@@ -34,9 +34,6 @@ class MovieListItem extends React.Component {
           </View>
           <Text style={styles.text}>{item.year}</Text>
           {item.genres.map((genre) => (
-            // sko ég er að íhuga ef við höfum tíma að búa til filter
-            // sem fer í gegnum alls konar case í json svarinu frá servernum,
-            // cuz skoppa og skrítla genre-in eru tölur
             <View style={styles.genres}>
               <Text key={genre.ID} style={[styles.text, { fontSize: 10 }]}>
                 {' '}

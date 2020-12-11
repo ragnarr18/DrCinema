@@ -13,9 +13,10 @@ class StartingSoonList extends React.Component {
   }
 
   render() {
+    const { startingSoon } = this.props;
     return (
       <View style={styles.container}>
-        {this.props.startingSoon.map((x) => (
+        {startingSoon.map((x) => (
           <View key={x.title + x.loc + x.t}>
             <StartingSoonListItem item={x} />
           </View>

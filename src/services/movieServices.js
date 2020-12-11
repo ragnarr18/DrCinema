@@ -11,8 +11,7 @@ function setLogo(data) {
       if (data[y].name === notSambio[i][0]) {
         data[y].logo = notSambio[i][1];
         break;
-      }
-      else {
+      } else {
         data[y].logo = sambio;
       }
     }

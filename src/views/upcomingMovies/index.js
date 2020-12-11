@@ -1,15 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import UpcomingMoviesList from '../../components/upcomingMoviesList';
 import { getUpcomingMovies } from '../../actions/upcomingMoviesActions';
 import styles from './styles';
-
-const stylesA = StyleSheet.create({
-  WebViewContainer: {
-    marginTop: (Platform.OS === 'android') ? 20 : 0,
-  },
-});
 
 class UpcomingMovies extends React.Component {
   constructor(props) {
@@ -23,7 +18,7 @@ class UpcomingMovies extends React.Component {
   }
 
   getTrailer() {
-    const { currentUpcomingMovie, navigation } = this.props;
+    const { navigation } = this.props;
     navigation.navigate('Trailer');
   }
 
@@ -31,31 +26,17 @@ class UpcomingMovies extends React.Component {
     return (
       <View style={styles.background}>
         <UpcomingMoviesList openTrailer={() => this.getTrailer()} />
-        {/* <TrailerModal
-          closeModel={() => this.setState({ isTrailerModalOpen: false })}
-          isOpen={isTrailerModalOpen}
-        /> */}
-        {/* <TrailerModal
-          closeModel={() => this.setState({ isTrailerModalOpen: false })}
-          isOpen={isTrailerModalOpen}>
-          {/* <View> */}
-        {/* <View style={{ height: 300, width: 300}}>
-              <WebView
-                style={stylesA.WebViewContainer}
-                allowsFullscreenVideo
-                javaScriptEnabled
-                scalesPageToFit
-                domStorageEnabled
-                source={{ uri: 'https://www.youtube.com/embed/f_FzLs92YFc?rel=0' }}
-              /> */}
-
-        {/* </View> */}
-        {/* </View> */}
-        {/* </TrailerModal> */}
       </View>
     );
   }
 }
+
+UpcomingMovies.propTypes = {
+  getUpcomingMovies: PropTypes.func.isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 const mapStateToProps = ({ upcomingMovies, currentUpcomingMovie }) => (
   { upcomingMovies, currentUpcomingMovie });

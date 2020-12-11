@@ -11,13 +11,13 @@ class UpcomingMoviesList extends React.Component {
   }
 
   render() {
-    const { openTrailer } = this.props;
+    const { openTrailer, upcomingMovies } = this.props;
     return (
       <View>
         <ScrollView
           contentContainerStyle={{ paddingBottom: 10 }}
         >
-          {this.props.upcomingMovies.map((movie) => (
+          {upcomingMovies.map((movie) => (
             <View key={movie.title}>
               <UpcomingMoviesListItem item={movie} openTrailer={openTrailer} />
             </View>

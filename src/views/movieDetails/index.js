@@ -17,7 +17,8 @@ class MovieDetails extends React.Component {
   }
 
   render() {
-    const movie = this.props.currentMovie;
+    const { currentMovie } = this.props;
+    const movie = currentMovie;
     const poster = (
       <Image
         style={styles.image}
@@ -82,4 +83,3 @@ MovieDetails.propTypes = {
 
 const mapStateToProps = ({ currentMovie }) => ({ currentMovie });
 export default connect(mapStateToProps)(MovieDetails);
-// export default MovieDetails;
