@@ -9,13 +9,19 @@ export default StyleSheet.create({
     color: colors.blueSaphire,
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: 32,
     padding: 5,
   },
   description: {
     color: colors.blueSaphire,
     textAlign: 'center',
     padding: 5,
+    fontSize: 14,
+    fontStyle: 'italic',
+  },
+  cinemaSubtitle: {
+    fontSize: 12,
+    fontStyle: 'italic',
   },
   header: {
     borderBottomWidth: 1,
