@@ -6,11 +6,8 @@ const notSambio = [['Smárabíó', 'https://yc.cldmlk.com/002/1550069358167_smar
   ['LaugarásBíó', 'https://kvikmyndir.is/wp-content/themes/kvikmyndir/images/logo_laugarasbio.png'], ['Bíó Paradís', 'https://nordichouse.is/wp-content/uploads/2018/02/facebook-share.png']];
 const sambio = 'http://trailers.samfilm.is/logo/sambio-weblogo.png';
 function setLogo(data) {
-  console.log('this is the data: ', data);
   for (let y = 0; y < data.length; y++) {
-    console.log('len', data.length);
     for (let i = 0; i < notSambio.length; i++) {
-      console.log('data[y].name: ', data[y].name, 'not sambio: ',data[y].name === notSambio[i][0]);
       if (data[y].name === notSambio[i][0]) {
         data[y].logo = notSambio[i][1];
         break;

@@ -17,10 +17,10 @@ class UpcomingMoviesListItem extends React.Component {
 
   async setCurrentUpcomingMovie() {
     // if (status) {
-      const { item, openTrailer } = this.props;
-      await this.props.getCurrentUpcomingMovie(item);
-      // console.log("child props: ", this.props);
-      openTrailer();
+    const { item, openTrailer } = this.props;
+    await this.props.getCurrentUpcomingMovie(item);
+    // console.log("child props: ", this.props);
+    openTrailer();
     // }
   }
 
@@ -43,7 +43,7 @@ class UpcomingMoviesListItem extends React.Component {
     let trailerText = '(No available trailer)';
     let trailerAvailable = false;
     if (item.trailers && item.trailers.length > 0 && item.trailers[0].results.length > 0) {
-      trailerText = '(click to see trailer)'
+      trailerText = '(click to see trailer)';
       trailerAvailable = true;
     }
     return (
@@ -65,6 +65,9 @@ UpcomingMoviesListItem.propTypes = {
   item: PropTypes.shape({
     poster: PropTypes.string,
     title: PropTypes.string,
+    trailers: PropTypes.arrayOf(PropTypes.shape({
+      results: PropTypes.arrayOf(PropTypes.shape({})),
+    })),
   }).isRequired,
   openTrailer: PropTypes.func.isRequired,
   getCurrentUpcomingMovie: PropTypes.func.isRequired,

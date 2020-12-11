@@ -26,11 +26,12 @@ class Cinemas extends React.Component {
   }
 
   async componentDidMount() {
-    await this.props.getCinemas();
-    await this.props.getMovies();
-    await this.props.startingSoon(this.props.movies);
-    // console.log('movies', this.props.movies);
-    // console.log('parent; ', this.props.cinemas);
+    const {
+      getCinemas, getMovies, startingSoon, movies,
+    } = this.props;
+    await getCinemas();
+    await getMovies();
+    await startingSoon(movies);
   }
 
   render() {
