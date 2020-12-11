@@ -26,4 +26,12 @@ export default StyleSheet.create({
     fontSize: 12,
     fontStyle: 'italic',
   },
+  logoView: {
+    position: 'absolute',
+    right: 0,
+    margin: 5,
+  },
+  textView: {
+    paddingRight: 50,
+  },
 });

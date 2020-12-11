@@ -67,6 +67,7 @@ export default StyleSheet.create({
     marginLeft: 10,
     paddingLeft: 10,
     marginTop: 10,
+    paddingBottom: 10,
     textAlign: 'center',
   },
   title: {
