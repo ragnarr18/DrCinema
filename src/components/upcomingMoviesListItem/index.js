@@ -26,7 +26,12 @@ class UpcomingMoviesListItem extends React.Component {
 
   render() {
     const { item, getCurrentUpcomingMovie } = this.props;
+
+    // Formatting for date
     const releaseDate = item['release-dateIS'];
+    const d = new Date(releaseDate).toGMTString();
+    const date = d.substr(0, d.indexOf('00:00'));
+
     let poster = <Image style={styles.image} source={{ uri: item.poster }} resizeMode="contain" />;
     if (item.poster === 'https://kvikmyndir.is/images/poster/') {
       poster = (
@@ -47,7 +52,7 @@ class UpcomingMoviesListItem extends React.Component {
           {poster}
           <View style={styles.textBox}>
             <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.text}>{releaseDate}</Text>
+            <Text style={styles.text}>{date}</Text>
             <Text style={styles.text}>{trailerText}</Text>
           </View>
         </View>

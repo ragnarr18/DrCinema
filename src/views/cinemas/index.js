@@ -7,6 +7,7 @@ import CinemaList from '../../components/cinemaList';
 
 import { getCinemas } from '../../actions/cinemasActions';
 import { getMovies } from '../../actions/moviesActions';
+import { startingSoon } from '../../actions/startingSoonAction';
 
 import styles from './styles';
 import { colors } from '../../styles';
@@ -20,6 +21,7 @@ class Cinemas extends React.Component {
   async componentDidMount() {
     await this.props.getCinemas();
     await this.props.getMovies();
+    await this.props.startingSoon(this.props.movies);
     // console.log('movies', this.props.movies);
     // console.log('parent; ', this.props.cinemas);
   }
@@ -57,7 +59,7 @@ Cinemas.propTypes = {
 };
 
 export default connect(mapStateToProps, {
-  getCinemas, getMovies,
+  getCinemas, getMovies, startingSoon
 })(withNavigation(Cinemas));
 // })(withNavigation(Cinemas))  arnar hér
 // here we are dispatching getCinemas and changePage
