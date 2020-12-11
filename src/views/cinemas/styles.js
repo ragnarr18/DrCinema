@@ -27,9 +27,16 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
   },
   button: {
-    borderTopWidth: 3,
-    borderBottomWidth: 3,
+    borderWidth: 3,
     borderColor: colors.cgBlue,
-    height: 75,
+    height: 80,
+    width: 300,
+    alignSelf: 'center',
+    borderRadius: 20,
+    backgroundColor: colors.pacificBlue,
+    marginBottom: 10,
   },
+  comingSoonImage: {
+    alignItems: 'center'
+  }
 });
