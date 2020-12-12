@@ -38,7 +38,7 @@ export default StyleSheet.create({
     padding: 5,
   },
   subtitle: {
-    color: colors.platinum,
+    color: colors.cgBlue,
     fontSize: 12,
     fontStyle: 'italic',
     textAlign: 'center',

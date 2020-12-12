@@ -59,6 +59,7 @@ UpcomingMoviesListItem.propTypes = {
     poster: PropTypes.string,
     title: PropTypes.string,
     trailers: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
       results: PropTypes.arrayOf(PropTypes.shape({})),
     })),
   }).isRequired,

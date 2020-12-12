@@ -36,9 +36,7 @@ class ShowtimeListItem extends React.Component {
 }
 
 ShowtimeListItem.propTypes = {
-  time: PropTypes.shape({
-    substr: PropTypes.func,
-  }).isRequired,
+  time: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
 };
 
