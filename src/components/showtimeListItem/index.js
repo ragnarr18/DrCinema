@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import styles from './styles';
 import { colors } from '../../styles';
+import { compareDateStrings } from '../../services/dateService';
 
 class ShowtimeListItem extends React.Component {
   constructor(props) {
@@ -12,16 +13,19 @@ class ShowtimeListItem extends React.Component {
   }
 
   render() {
-    const { time, url } = this.props;
+    let { time, url } = this.props;
     const today = new Date();
     const currTime = `${today.getHours()}:${today.getMinutes()}`;
-    const passed = time.substr(0, 5) > currTime;
+    time = time.substr(0, 5);
+
+    // is the current time greater than the show time?
+    const passed = compareDateStrings(currTime, time);
 
     return (
       <View style={styles.button}>
         <Button
           title={time}
-          disabled={!passed}
+          disabled={passed}
           color={colors.cgBlue}
           onPress={() => { Linking.openURL(url); }}
         />

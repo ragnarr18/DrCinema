@@ -40,7 +40,7 @@ class Cinemas extends React.Component {
     const { navigation } = this.props;
     return (
       <ScrollView style={styles.background}>
-        <View style={{ flex: 1, backgroundColor: colors.pacificBlue }}>
+        <View style={styles.drCinemaBackground}>
           <Text style={styles.drCinema}>Dr.Cinema</Text>
         </View>
         <Text style={styles.title}>COMING SOON</Text>

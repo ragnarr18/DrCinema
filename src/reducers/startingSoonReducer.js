@@ -1,14 +1,30 @@
 import * as constants from '../constants';
+import { compareDateStrings } from '../services/dateService';
 
+// constant of how many films to show
 const numberOfFilms = 5;
 
-function getIndexOfOldest(list) {
-  // finds the latest date and returns it's index
-  let oldest = list[0];
+function removeOldest(list) {
+  // removes the value with the highests time value
+  let oldest = list[0].t;
+  let index = 0;
+  list.forEach((x, i = 0) => {
+    if (x.t > oldest) {
+      oldest = x.t;
+      index = i;
+    }
+  })
+  list.splice(index, 1);
+  return list;
+}
+
+function getHighest(list) {
+  // returns the object with the highest time value
+  let highest = list[0].t;
   list.forEach((x) => {
-    if (x.time > oldest.time) { oldest = x; }
+    if (x.t > highest) highest = x.t;
   });
-  return list.indexOf(oldest);
+  return highest;
 }
 
 function getNextMovies(movies) {
@@ -29,22 +45,26 @@ function getNextMovies(movies) {
         const loc = location.name;
         let t = time.substr(0, time.indexOf('(') - 1);
         t = t.replace('.', ':');
+
+        const later = compareDateStrings(t, latest);  // if time is later than latest
+        const sooner = compareDateStrings(latest, t); // if time is sooner than latest
+        const future = compareDateStrings(t, d);      // if time is in the future
+
         if (latest === '') { latest = t; }
 
         if (next.length < numberOfFilms) {
-          if (title && loc && t) {
+          if (title && loc && t && future) {
             next.push({
               title, loc, t, purchase_url,
             });
-            if (t > latest && t > d) { latest = t; }
+            if (later) { latest = t; }
           }
-        } else if (t < latest) {
-          if (title && loc && t) {
-            const index = getIndexOfOldest(next);
-            next[index] = {
-              title, loc, t, purchase_url,
-            };
-          }
+        } else if (title && loc && t && sooner && future) {
+          removeOldest(next);
+          next.push({
+            title, loc, t, purchase_url 
+          });
+          latest = getHighest(next);
         }
       }
     }
@@ -55,7 +75,6 @@ function getNextMovies(movies) {
 }
 
 export default function (state = [], action) {
-  // console.log(action.payload);
   switch (action.type) {
     case constants.STARTING_SOON: return getNextMovies(action.payload);
     default: return state;

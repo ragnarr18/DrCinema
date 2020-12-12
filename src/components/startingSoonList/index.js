@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './styles';
@@ -13,13 +13,24 @@ class StartingSoonList extends React.Component {
   }
 
   render() {
+    let movies = this.props.startingSoon.map((x) => (
+      <View key={x.title + x.loc + x.t}>
+        <StartingSoonListItem item={x} />
+      </View>
+    ))
+    if (movies.length === 0) {
+      movies = (
+        <View style={styles.notAvailable}>
+          <Text style={styles.notAvailableText}>
+            No available showings...
+          </Text>
+        </View>
+      );
+    }
+
     return (
       <View style={styles.container}>
-        {this.props.startingSoon.map((x) => (
-          <View key={x.title + x.loc + x.t}>
-            <StartingSoonListItem item={x} />
-          </View>
-        ))}
+        {movies}
       </View>
     );
   }
