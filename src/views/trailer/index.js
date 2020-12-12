@@ -65,7 +65,6 @@ class Trailer extends React.Component {
         </View>
         <View style={styles.container}>
           {trailer !== undefined > 0 && (
-          // <View style={styles.container}>
           <WebView
             style={styles.WebViewContainer}
             allowsFullscreenVideo
@@ -83,6 +82,11 @@ class Trailer extends React.Component {
 
 Trailer.propTypes = {
   getUpcomingMovies: PropTypes.func.isRequired,
+  currentUpcomingMovie: PropTypes.shape({
+    plot: PropTypes.string,
+    poster: PropTypes.string.isRequired,
+    trailers: PropTypes.arrayOf().isRequired,
+  }).isRequired
 };
 
 const mapStateToProps = ({ currentUpcomingMovie }) => ({ currentUpcomingMovie });

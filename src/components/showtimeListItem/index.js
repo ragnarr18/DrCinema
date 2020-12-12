@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View, Button, Linking,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import { colors } from '../../styles';
 import { compareDateStrings } from '../../services/dateService';
@@ -33,5 +34,12 @@ class ShowtimeListItem extends React.Component {
     );
   }
 }
+
+ShowtimeListItem.propTypes = {
+  time: PropTypes.shape({
+    substr: PropTypes.func,
+  }).isRequired,
+  url: PropTypes.string.isRequired,
+};
 
 export default ShowtimeListItem;

@@ -12,13 +12,14 @@ class CinemaList extends React.Component {
   }
 
   render() {
-    const height = this.props.cinemas.length * 115;
+    const { cinemas } = this.props;
+    const height = cinemas.length * 115;
     return (
       <View style={styles.background}>
         <View
           contentContainerStyle={{ height }}
         >
-          {this.props.cinemas.map((cinema) => (
+          {cinemas.map((cinema) => (
             <View key={cinema.name}>
               <CinemaListItem
                 item={cinema}
@@ -38,6 +39,4 @@ CinemaList.propTypes = {
 };
 
 const mapStateToProps = ({ cinemas }) => ({ cinemas });
-// pulling cinems from store, same as (stateStore){return {cinemas: stateStore.cinemas}}
-export default connect(mapStateToProps)(CinemaList); // returns a connected component
-// export default connect(null)(cinemaList)
+export default connect(mapStateToProps)(CinemaList);

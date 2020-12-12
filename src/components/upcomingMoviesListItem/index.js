@@ -16,18 +16,13 @@ class UpcomingMoviesListItem extends React.Component {
   }
 
   async setCurrentUpcomingMovie() {
-    // if (status) {
-    const { item, openTrailer } = this.props;
-    await this.props.getCurrentUpcomingMovie(item);
-    // console.log("child props: ", this.props);
+    const { item, openTrailer, getCurrentUpcomingMovie } = this.props;
+    await getCurrentUpcomingMovie(item);
     openTrailer();
-    // }
   }
 
   render() {
-    const { item, getCurrentUpcomingMovie } = this.props;
-
-    // Formatting for date
+    const { item } = this.props;
     const releaseDate = item['release-dateIS'];
     const d = new Date(releaseDate).toGMTString();
     const date = d.substr(0, d.indexOf('00:00'));
@@ -41,10 +36,8 @@ class UpcomingMoviesListItem extends React.Component {
       );
     }
     let trailerText = '(No available trailer)';
-    let trailerAvailable = false;
     if (item.trailers && item.trailers.length > 0 && item.trailers[0].results.length > 0) {
       trailerText = '(click to see trailer)';
-      trailerAvailable = true;
     }
     return (
       <TouchableOpacity onPress={() => this.setCurrentUpcomingMovie()}>
